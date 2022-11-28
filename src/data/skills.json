@@ -1,0 +1,49 @@
+{
+  "categories": [
+    {
+      "title": "Code",
+      "skills": [
+        "HTML5",
+        "CSS3",
+        "JavaScript ES6",
+        "React",
+        "Styled components",
+        "Redux",
+        "React Native",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Unit testing"
+      ]
+    },
+    {
+      "title": "Toolbox",
+      "skills": [
+        "GitHub",
+        "Figma",
+        "Slack",
+        "Notion",
+        "VS Code",
+        "Postman",
+        "Prismic",
+        "Storyblok"
+      ]
+    },
+    {
+      "title": "More",
+      "skills": [
+        "Communication",
+        "Googling",
+        "Learning",
+        "Agile methodology",
+        "Mob programming",
+        "Pair programming",
+        "Code reviews"
+      ]
+    },
+    {
+      "title": "Upcoming",
+      "skills": ["TypeScript", "GraphQL", "Tailwind CSS", "Next.js"]
+    }
+  ]
+}

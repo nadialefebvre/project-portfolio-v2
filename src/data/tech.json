@@ -1,0 +1,68 @@
+{
+  "tech": [
+    {
+      "name": "HTML5",
+      "isHighlighted": false
+    },
+    {
+      "name": "CSS3",
+      "isHighlighted": false
+    },
+    {
+      "name": "JavaScript ES6",
+      "isHighlighted": true
+    },
+    {
+      "name": "TypeScript",
+      "isHighlighted": true
+    },
+    {
+      "name": "Flexbox",
+      "isHighlighted": false
+    },
+    {
+      "name": "React 18",
+      "isHighlighted": true
+    },
+    {
+      "name": "Styled components",
+      "isHighlighted": false
+    },
+    {
+      "name": "Redux",
+      "isHighlighted": true
+    },
+    {
+      "name": "React Native",
+      "isHighlighted": false
+    },
+    {
+      "name": "REST APIs",
+      "isHighlighted": true
+    },
+    {
+      "name": "Node.js",
+      "isHighlighted": false
+    },
+    {
+      "name": "MongoDB",
+      "isHighlighted": false
+    },
+    {
+      "name": "Express",
+      "isHighlighted": false
+    },
+    {
+      "name": "mob programming",
+      "isHighlighted": false
+    },
+    {
+      "name": "pair programming",
+      "isHighlighted": true
+    },
+    {
+      "name": "GitHub",
+      "isHighlighted": false
+    }
+  ]
+}

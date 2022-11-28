@@ -1,0 +1,28 @@
+{
+  "infos": {
+    "name": "Nadia Lefebvre",
+    "email": "dev.nadialefebvre@gmail.com",
+    "devTitle": "Frontend developer",
+    "otherTitle": "Language specialist",
+    "imageUrl": "./assets/profile.jpg",
+    "introText": "Hello! I’m a structured and detail-oriented front-end developer with great communication skills and a background as a language specialist. I have a profound love for learning and for solving problems. I aspire to experience many eureka moments while creating impactful products."
+  },
+  "socials": [
+    {
+      "name": "Linkedin",
+      "url": "https://www.linkedin.com/in/nadiainsweden/"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/nadialefebvre"
+    },
+    {
+      "name": "Stack Overflow",
+      "url": "https://stackoverflow.com/users/17550223/nadia-lefebvre"
+    },
+    {
+      "name": "Medium",
+      "url": "https://nadialefebvredev.medium.com/"
+    }
+  ]
+}
