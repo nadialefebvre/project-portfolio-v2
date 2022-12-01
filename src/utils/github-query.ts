@@ -1,8 +1,10 @@
+import data from "data/user.json"
+
 export const fetchRepos = `{
   search
     (first: 100,
     type: REPOSITORY,
-    query: "user:nadialefebvre fork:true project in:name")
+    query: "user:${data.infos.usernameGitHub} fork:true project in:name")
     {
       nodes {
         ... repoFields
@@ -12,7 +14,7 @@ export const fetchRepos = `{
       }
     }
 
-  user(login: "nadialefebvre") {
+  user(login: "${data.infos.usernameGitHub}") {
     pinnedItems(last: 100, types: REPOSITORY) {
       nodes {
         ... repoFields
