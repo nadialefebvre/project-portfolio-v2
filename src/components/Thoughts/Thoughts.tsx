@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 
+import data from "data/user.json"
+
 import { FeaturedThought } from "./FeaturedThought"
 import { OtherThought } from "./OtherThought"
 
@@ -17,9 +19,8 @@ const Thoughts = () => {
   const [articles, setArticles] = useState<Article[]>()
 
   if (articles === undefined) {
-    // fetch('https://api.rss2json.com/v1/api.json?rss_url=https://nadialefebvredev.medium.com/feed')
     fetch(
-      "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@nadialefebvredev"
+      `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${data.infos.usernameMedium}`
     )
       .then((res) => res.json())
       .then((res) => setArticles(res.items))
@@ -58,7 +59,8 @@ export default Thoughts
 
 /*
 If there's an issue with API, use this endpoint instead (https://v1.nocodeapi.com/nadialefebvre/medium/UWGgqYxfsNCHnlbd)
-Frome here: https://app.nocodeapi.com/dashboard/api/medium
+From here: https://app.nocodeapi.com/dashboard/api/medium
+(and add key in .env file and use data from user.json for username)
 
 But image (thumbnail) will need to be retrived from content directly (check response):
   const startSrc = thought.content.indexOf(`src=`) + 5
