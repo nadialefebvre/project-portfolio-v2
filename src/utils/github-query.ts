@@ -1,6 +1,6 @@
 import data from "data/user.json"
 
-export const fetchRepos = `{
+export const githubQuery = `{
   search
     (first: 100,
     type: REPOSITORY,

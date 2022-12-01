@@ -4,7 +4,7 @@ import FeaturedProject from "./FeaturedProject"
 import OtherProject from "./OtherProject"
 
 import { Repo } from "./Projects.types"
-import { fetchRepos } from "utils/github-query"
+import { githubQuery } from "utils/github-query"
 
 import { Section } from "components/Section"
 
@@ -34,7 +34,7 @@ const Projects = () => {
       },
 
       body: JSON.stringify({
-        query: fetchRepos,
+        query: githubQuery,
       }),
     })
       .then((res) => res.json())
