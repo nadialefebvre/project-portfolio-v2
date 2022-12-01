@@ -13,6 +13,10 @@
       "isHighlighted": true
     },
     {
+      "name": "unit testing",
+      "isHighlighted": false
+    },
+    {
       "name": "TypeScript",
       "isHighlighted": true
     },

@@ -6,6 +6,7 @@
         "HTML5",
         "CSS3",
         "JavaScript ES6",
+        "TypeScript",
         "React",
         "Styled components",
         "Redux",
@@ -13,13 +14,15 @@
         "Node.js",
         "Express",
         "MongoDB",
-        "Unit testing"
+        "Jest"
       ]
     },
     {
       "title": "Toolbox",
       "skills": [
         "GitHub",
+        "Heroku",
+        "Google Cloud",
         "Figma",
         "Slack",
         "Notion",
@@ -43,7 +46,7 @@
     },
     {
       "title": "Upcoming",
-      "skills": ["TypeScript", "GraphQL", "Tailwind CSS", "Next.js"]
+      "skills": ["GraphQL", "Tailwind CSS", "Next.js"]
     }
   ]
 }
