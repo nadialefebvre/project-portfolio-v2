@@ -2,7 +2,14 @@ import React from "react"
 
 import { Tags } from "components/Tags"
 
-import { devTopics, sortTopics, fixProjectTopic } from "utils/topics-things"
+import {
+  setTopics,
+  devTopics,
+  sortTopics,
+  fixProjectTopic,
+} from "utils/topics-things"
+
+import { fixProjectName } from "utils/project-things"
 
 import { Repo } from "../Projects.types"
 
@@ -13,15 +20,11 @@ interface Props {
 }
 
 const OtherProject = ({ project }: Props) => {
-  const projectName = project.name.replace("project-", "").replaceAll("-", " ")
-
   const topicsList = () => {
-    const topics = project.repositoryTopics.nodes.map(
-      (topic) => topic.topic.name
-    )
-    const topicsToKeep = topics.filter(
+    const topicsToKeep = setTopics(project).filter(
       (topic) =>
-        topic === topics.find((element) => devTopics.includes(element)) ||
+        topic ===
+          setTopics(project).find((element) => devTopics.includes(element)) ||
         !devTopics.includes(topic)
     )
     return sortTopics(topicsToKeep)
@@ -31,7 +34,7 @@ const OtherProject = ({ project }: Props) => {
     <Styled.Article>
       <a href={project.url} target="_blank" rel="noopener noreferrer">
         <Styled.TextContainer>
-          <Styled.Title>{projectName}.</Styled.Title>
+          <Styled.Title>{fixProjectName(project)}.</Styled.Title>
           <Styled.Description>
             {project.description}{" "}
             <Styled.Arrows aria-hidden="true">&gt;&gt;</Styled.Arrows>

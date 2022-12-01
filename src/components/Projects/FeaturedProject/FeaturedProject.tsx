@@ -2,9 +2,18 @@ import React from "react"
 
 import { Tags } from "components/Tags"
 
-import { devTopics, sortTopics, fixProjectTopic } from "utils/topics-things"
+import {
+  setTopics,
+  devTopics,
+  sortTopics,
+  fixProjectTopic,
+} from "utils/topics-things"
+
+import { fixProjectName } from "utils/project-things"
 
 import { Repo } from "../Projects.types"
+
+import data from "data/user.json"
 
 import * as Styled from "./FeaturedProject.styles"
 
@@ -13,18 +22,15 @@ interface Props {
 }
 
 const FeaturedProject = ({ project }: Props) => {
-  const projectName = project.name.replace("project-", "").replaceAll("-", " ")
-  const imageSrcURL = `https://raw.githubusercontent.com/nadialefebvre/${project.name}/${project.defaultBranchRef.name}/screenshot.jpg`
+  const imageSrcURL = `https://raw.githubusercontent.com/${data.infos.usernameGitHub}/${project.name}/${project.defaultBranchRef.name}/screenshot.jpg`
   const imageAltText = `${project.name.replaceAll("-", " ")}'s screenshot`
 
-  const topics = project.repositoryTopics.nodes.map((topic) => topic.topic.name)
-
   const projectType = () => {
-    if (topics.includes("fullstack")) {
+    if (setTopics(project).includes("fullstack")) {
       return "Fullstack web app."
-    } else if (topics.includes("mobile")) {
+    } else if (setTopics(project).includes("mobile")) {
       return "Mobile app."
-    } else if (topics.includes("backend")) {
+    } else if (setTopics(project).includes("backend")) {
       return "RESTful API."
     } else {
       return "Frontend web app."
@@ -32,7 +38,9 @@ const FeaturedProject = ({ project }: Props) => {
   }
 
   const topicsList = () => {
-    const topicsToKeep = topics.filter((topic) => !devTopics.includes(topic))
+    const topicsToKeep = setTopics(project).filter(
+      (topic) => !devTopics.includes(topic)
+    )
     return sortTopics(topicsToKeep)
   }
 
@@ -40,14 +48,14 @@ const FeaturedProject = ({ project }: Props) => {
     <Styled.Article>
       <a
         href={project.homepageUrl}
-        aria-label={`Go to deployed project - ${projectName}`}
+        aria-label={`Go to deployed project - ${fixProjectName(project)}`}
         target="_blank"
         rel="noopener noreferrer"
       >
         <Styled.ImageContainer>
           <Styled.Image src={imageSrcURL} alt={imageAltText} />
-          <Styled.ImageOverlay title={`Project ${projectName}`}>
-            <h3>{projectName}</h3>
+          <Styled.ImageOverlay title={`Project ${fixProjectName(project)}`}>
+            <h3>{fixProjectName(project)}</h3>
           </Styled.ImageOverlay>
         </Styled.ImageContainer>
       </a>

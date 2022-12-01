@@ -1,3 +1,5 @@
+import { Repo } from "components/Projects/Projects.types"
+
 export const devTopics = ["fullstack", "backend", "mobile", "frontend"]
 
 const techTopicsDictionary = new Map([
@@ -5,8 +7,8 @@ const techTopicsDictionary = new Map([
   ["backend", "Backend"],
   ["fullstack", "Fullstack"],
   ["mobile", "Mobile"],
-  ["javascript", "JavaScript"],
   ["typescript", "TypeScript"],
+  ["javascript", "JavaScript"],
   ["react", "React"],
   ["redux", "Redux"],
   ["react-router", "React Router"],
@@ -49,3 +51,8 @@ export const sortTopics = (topics: string[]) => {
     return 0
   })
 }
+
+
+export const setTopics = (project: Repo) => project.repositoryTopics.nodes.map(
+  (topic) => topic.topic.name
+)
