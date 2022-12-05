@@ -1,12 +1,15 @@
-import React, { useState } from "react"
+import React, { useEffect } from "react"
 
-import data from "data/user.json"
+import { useAppSelector, useAppDispatch } from "App/hooks"
+
+import { fetchArticles } from "reducers/articles"
 
 import { FeaturedThought } from "./FeaturedThought"
 import { OtherThought } from "./OtherThought"
 
 import { Article } from "./Thoughts.types"
 
+import { Loader } from "components/Loader"
 import { Section } from "components/Section"
 
 // maybe add a JSON file with data here as backup if api isn't working???
@@ -16,18 +19,14 @@ import { Section } from "components/Section"
 // Medium feed has only the last 10 articles: what should I do with that?
 // add link to all stories on Medium? no way to find how many articles have been published...
 const Thoughts = () => {
-  const [articles, setArticles] = useState<Article[]>()
+  const dispatch = useAppDispatch()
 
-  if (articles === undefined) {
-    fetch(
-      `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${data.infos.usernameMedium}`
-    )
-      .then((res) => res.json())
-      .then((res) => setArticles(res.items))
-      .catch((err) => console.log(err))
-  } else {
-    // console.log("articles=", articles)
-  }
+  const isLoading = useAppSelector((store) => store.articles.isLoading)
+  const articles = useAppSelector((state) => state.articles.articles)
+
+  useEffect(() => {
+    dispatch(fetchArticles())
+  }, [dispatch])
 
   // maybe try to find a way to fix the fact that it's updating very slowly compared to API...
   return (
@@ -35,21 +34,27 @@ const Thoughts = () => {
       title="My thoughts"
       extraTitle=" about code"
       featured={
-        articles !== undefined &&
-        articles
-          .slice(0, 2)
-          .map((article: Article) => (
-            <FeaturedThought thought={article} key={article.guid} />
-          ))
+        isLoading ? (
+          <Loader item="featured thoughts" />
+        ) : (
+          articles
+            .slice(0, 2)
+            .map((article: Article) => (
+              <FeaturedThought thought={article} key={article.guid} />
+            ))
+        )
       }
       subtitle="More thoughts"
       other={
-        articles !== undefined &&
-        articles
-          .slice(2)
-          .map((article: Article) => (
-            <OtherThought thought={article} key={article.guid} />
-          ))
+        isLoading ? (
+          <Loader item="other thoughts" />
+        ) : (
+          articles
+            .slice(2)
+            .map((article: Article) => (
+              <OtherThought thought={article} key={article.guid} />
+            ))
+        )
       }
     />
   )
