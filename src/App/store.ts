@@ -1,11 +1,11 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit"
 
 import repos from "reducers/repos"
-import ui from "reducers/ui"
+import articles from "reducers/articles"
 
 const reducer = combineReducers({
-  ui: ui.reducer,
   repos: repos.reducer,
+  articles: articles.reducer,
 })
 
 export const store = configureStore({ reducer })

@@ -4,7 +4,6 @@ import { Repo } from "components/Projects/Projects.types"
 
 import { AppDispatch } from "App/store"
 
-import ui from "./ui"
 import { githubQuery } from "utils/github-query"
 
 const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN
@@ -12,11 +11,13 @@ const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN
 interface ReposState {
   allRepos: Repo[]
   pinnedRepos: Repo[]
+  isLoading: boolean
 }
 
 const initialState: ReposState = {
   allRepos: [],
   pinnedRepos: [],
+  isLoading: true,
 }
 
 const repos = createSlice({
@@ -29,12 +30,15 @@ const repos = createSlice({
     setPinnedRepos: (state, action: PayloadAction<Repo[]>) => {
       state.pinnedRepos = action.payload
     },
+    setIsLoading: (store, action) => {
+      store.isLoading = action.payload
+    },
   },
 })
 
-export const fetchTest = () => {
+export const fetchRepos = () => {
   return (dispatch: AppDispatch) => {
-    dispatch(ui.actions.setLoading(true))
+    dispatch(repos.actions.setIsLoading(true))
     fetch("https://api.github.com/graphql", {
       method: "POST",
       headers: {
@@ -48,7 +52,7 @@ export const fetchTest = () => {
       .then((res) => {
         dispatch(repos.actions.setAllRepos(res.data.search.nodes))
         dispatch(repos.actions.setPinnedRepos(res.data.user.pinnedItems.nodes))
-        dispatch(ui.actions.setLoading(false))
+        dispatch(repos.actions.setIsLoading(false))
       })
       .catch((err) => console.log(err))
   }
