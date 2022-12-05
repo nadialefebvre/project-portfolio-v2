@@ -2,6 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 import { Repo } from "components/Projects/Projects.types"
 
+import { AppDispatch } from "App/store"
+
 import ui from "./ui"
 import { githubQuery } from "utils/github-query"
 
@@ -31,7 +33,7 @@ const repos = createSlice({
 })
 
 export const fetchTest = () => {
-  return (dispatch: any, getState: any) => {
+  return (dispatch: AppDispatch) => {
     dispatch(ui.actions.setLoading(true))
     fetch("https://api.github.com/graphql", {
       method: "POST",

@@ -1,5 +1,8 @@
 import React from "react"
 
+import { Provider } from "react-redux"
+import { store } from "./store"
+
 import { ThemeProvider } from "styled-components"
 
 import { theme } from "utils/theme"
@@ -18,17 +21,19 @@ import {
 import { GlobalStyle } from "App/App.styles"
 
 const App = () => (
-  <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    <Header />
-    <Intro />
-    <Tech />
-    <Projects />
-    <Thoughts />
-    <Skills />
-    <ForMore />
-    <Footer />
-  </ThemeProvider>
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Header />
+      <Intro />
+      <Tech />
+      <Projects />
+      <Thoughts />
+      <Skills />
+      <ForMore />
+      <Footer />
+    </ThemeProvider>
+  </Provider>
 )
 
 export default App
