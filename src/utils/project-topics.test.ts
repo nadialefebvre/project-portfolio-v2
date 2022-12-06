@@ -1,9 +1,9 @@
 import {
   fixProjectTopic,
   sortTopics,
-  // topicsListFeatured,
-  // topicsListOther,
-  // projectType,
+  topicsListFeatured,
+  topicsListOther,
+  projectType,
 } from "utils/project-topics"
 
 describe("project-topics", () => {
@@ -29,7 +29,7 @@ describe("project-topics", () => {
       "c#",
     ])
   })
-  /*
+
   const testFeaturedObject = {
     id: "R_kgDOHg4ixA",
     name: "project-edible-nostalgia",
@@ -229,5 +229,4 @@ describe("project-topics", () => {
   it("projectType should return the expected string", () => {
     expect(projectType(testOtherObject)).toEqual("Fullstack web app")
   })
-*/
 })

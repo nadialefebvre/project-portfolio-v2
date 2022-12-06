@@ -4,9 +4,9 @@ export interface Repo {
   description: string
   url: string
   homepageUrl: string
-  createdAt: string
+  createdAt?: string
   repositoryTopics: RepositoryTopics
-  defaultBranchRef: DefaultBranchRef
+  defaultBranchRef?: DefaultBranchRef
 }
 
 interface RepositoryTopics {

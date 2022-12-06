@@ -20,7 +20,7 @@ const FeaturedProject = ({ project }: Props) => {
   const projectImageSrc = () => {
     const username = data.infos.usernameGitHub
     const projectName = project.name
-    const defaultBranch = project.defaultBranchRef.name
+    const defaultBranch = project.defaultBranchRef?.name
     return `https://raw.githubusercontent.com/${username}/${projectName}/${defaultBranch}/screenshot.jpg`
   }
 

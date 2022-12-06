@@ -35,10 +35,12 @@ const Projects = () => {
       (repo) => !pinnedReposIDs?.includes(repo.id)
     )
 
-    const notPinnedReposSorted = notPinnedRepos?.sort(
-      (a, b) =>
-        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-    )
+    const notPinnedReposSorted = notPinnedRepos?.sort((a, b) => {
+      if (a.createdAt !== undefined && b.createdAt !== undefined) {
+        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+      }
+      return 0
+    })
     return notPinnedReposSorted
   }
 
