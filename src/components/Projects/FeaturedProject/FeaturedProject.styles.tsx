@@ -31,12 +31,12 @@ export const ImageOverlay = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(100, 100, 100, 0.4);
-  font-family: "Montserrat", sans-serif;
-  color: ${props => props.theme.white};
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(100, 100, 100, 0.4);
+  color: ${(props) => props.theme.white};
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   text-transform: uppercase;
   font-size: 28px;
@@ -45,14 +45,14 @@ export const ImageOverlay = styled.div`
     &:hover {
       background-color: transparent;
       color: transparent;
-      outline: 3px solid ${props => props.theme.secondary};
+      outline: 3px solid ${(props) => props.theme.secondary};
     }
   }
 `
 
 export const Title = styled.h3`
   text-transform: uppercase;
-  color: ${props => props.theme.primary};
+  color: ${(props) => props.theme.primary};
   letter-spacing: 0.01em;
   font-size: 17px;
   line-height: 171%;
