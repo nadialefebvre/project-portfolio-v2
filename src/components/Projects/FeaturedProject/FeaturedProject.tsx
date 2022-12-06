@@ -2,13 +2,9 @@ import React from "react"
 
 import { Tags } from "components/Tags"
 
-import { topicsListFeatured, fixProjectTopic } from "utils/topics-things"
+import { topicsListFeatured, fixProjectTopic, projectType } from "utils/project-topics"
 
-import {
-  shortProjectName,
-  longProjectNameTitleCase,
-  projectType,
-} from "utils/project-things"
+import { shortName, longNameInTitleCase } from "utils/project-name"
 
 import data from "data/user.json"
 
@@ -34,7 +30,7 @@ const FeaturedProject = ({ project }: Props) => {
     <Styled.Article>
       <a
         href={project.homepageUrl}
-        aria-label={`Go to deployed project - ${shortProjectName(
+        aria-label={`Go to deployed project - ${shortName(
           project.name
         )}`}
         target="_blank"
@@ -43,16 +39,16 @@ const FeaturedProject = ({ project }: Props) => {
         <Styled.ImageContainer>
           <Styled.Image
             src={projectImageSrc()}
-            alt={longProjectNameTitleCase(project.name)}
+            alt={longNameInTitleCase(project.name)}
           />
-          <Styled.ImageOverlay title={longProjectNameTitleCase(project.name)}>
-            <h3>{shortProjectName(project.name)}</h3>
+          <Styled.ImageOverlay title={longNameInTitleCase(project.name)}>
+            <h3>{shortName(project.name)}</h3>
           </Styled.ImageOverlay>
         </Styled.ImageContainer>
       </a>
       <a
         href={project.url}
-        aria-label={`Go to project repository - ${shortProjectName(
+        aria-label={`Go to project repository - ${shortName(
           project.name
         )}`}
         target="_blank"

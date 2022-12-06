@@ -2,9 +2,9 @@ import React from "react"
 
 import { Tags } from "components/Tags"
 
-import { topicsListOther, fixProjectTopic } from "utils/topics-things"
+import { topicsListOther, fixProjectTopic } from "utils/project-topics"
 
-import { shortProjectName } from "utils/project-things"
+import { shortName } from "utils/project-name"
 
 import { Repo } from "../Projects.types"
 
@@ -18,7 +18,7 @@ const OtherProject = ({ project }: Props) => (
   <Styled.Article>
     <a href={project.url} target="_blank" rel="noopener noreferrer">
       <Styled.TextContainer>
-        <Styled.Title>{`${shortProjectName(project.name)}.`}</Styled.Title>
+        <Styled.Title>{`${shortName(project.name)}.`}</Styled.Title>
         <Styled.Description>
           {project.description}{" "}
           <Styled.Arrows aria-hidden="true">&gt;&gt;</Styled.Arrows>

@@ -11,9 +11,6 @@ export const fixProjectTopic = (topic: string) => {
   }
 }
 
-// used only once, maybe put it back in its component?
-export const fixThoughtTopic = (topic: string) => topic.replaceAll("-", "")
-
 // allows the items NOT in the dictionary to be added at the end
 const sortTopics = (topics: string[]) => {
   const techTopicsOrder = Array.from(techTopicsDictionary.keys())
@@ -30,7 +27,7 @@ const sortTopics = (topics: string[]) => {
   return sortedTopics
 }
 
-export const setTopics = (project: Repo) =>
+const setTopics = (project: Repo) =>
   project.repositoryTopics.nodes.map((topic) => topic.topic.name)
 
 export const topicsListFeatured = (project: Repo) => {
@@ -48,4 +45,18 @@ export const topicsListOther = (project: Repo) => {
       !devTopics.includes(topic)
   )
   return sortTopics(topicsToKeep)
+}
+
+
+// used only once, maybe put it back in its component?
+export const projectType = (project: Repo) => {
+  if (setTopics(project).includes("fullstack")) {
+    return "Fullstack web app"
+  } else if (setTopics(project).includes("mobile")) {
+    return "Mobile app"
+  } else if (setTopics(project).includes("backend")) {
+    return "RESTful API"
+  } else {
+    return "Frontend web app"
+  }
 }

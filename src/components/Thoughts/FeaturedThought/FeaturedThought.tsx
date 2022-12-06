@@ -2,7 +2,7 @@ import React from "react"
 
 import { Tags } from "components/Tags"
 
-import { fixThoughtTopic } from "utils/topics-things"
+import { fixTopic } from "utils/thought-topics"
 
 import { Story } from "../Thoughts.types"
 
@@ -46,7 +46,7 @@ const FeaturedThought = ({ thought }: Props) => {
             <Styled.Arrows aria-hidden="true">&gt;&gt;</Styled.Arrows>
           </Styled.Text>
         </div>
-        <Tags list={thought.categories} fixTopic={fixThoughtTopic} isItalic />
+        <Tags list={thought.categories} fixTopic={fixTopic} isItalic />
       </a>
     </Styled.Article>
   )
