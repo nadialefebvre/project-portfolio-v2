@@ -12,7 +12,7 @@ export const fixProjectTopic = (topic: string) => {
 }
 
 // allows the items NOT in the dictionary to be added at the end
-const sortTopics = (topics: string[]) => {
+export const sortTopics = (topics: string[]) => {
   const techTopicsOrder = Array.from(techTopicsDictionary.keys())
   const sortedTopics = topics.sort((a, b) => {
     if (techTopicsOrder.includes(a) && techTopicsOrder.includes(b)) {
