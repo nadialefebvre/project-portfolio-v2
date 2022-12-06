@@ -4,14 +4,14 @@ import { Tags } from "components/Tags"
 
 import { fixThoughtTopic } from "utils/topics-things"
 
-import { Article } from "../Thoughts.types"
+import { Story } from "../Thoughts.types"
 
 import * as Styled from "./FeaturedThought.styles"
 
 import { formattedDateFunction } from "utils/date"
 
 interface Props {
-  thought: Article
+  thought: Story
 }
 
 const FeaturedThought = ({ thought }: Props) => {
@@ -25,7 +25,7 @@ const FeaturedThought = ({ thought }: Props) => {
     <Styled.Article>
       <a
         href={thought.link}
-        aria-label="Go to article on Medium"
+        aria-label="Go to story on Medium"
         target="_blank"
         rel="noopener noreferrer"
       >

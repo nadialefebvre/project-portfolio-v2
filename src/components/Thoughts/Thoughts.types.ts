@@ -1,4 +1,4 @@
-export interface Article {
+export interface Story {
   title: string
   pubDate: string
   link: string
