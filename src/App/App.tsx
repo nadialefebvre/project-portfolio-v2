@@ -6,7 +6,7 @@ import { ThemeProvider } from "styled-components"
 
 import { store } from "store/configureStore"
 
-import { theme } from "utils/theme"
+import { theme } from "constants/theme"
 
 import {
   Header,

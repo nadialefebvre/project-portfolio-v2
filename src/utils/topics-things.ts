@@ -1,31 +1,7 @@
 import { Repo } from "components/Projects/Projects.types"
 
-export const devTopics = ["fullstack", "backend", "mobile", "frontend"]
-
-const techTopicsDictionary = new Map([
-  ["frontend", "Frontend"],
-  ["backend", "Backend"],
-  ["fullstack", "Fullstack"],
-  ["mobile", "Mobile"],
-  ["typescript", "TypeScript"],
-  ["javascript", "JavaScript"],
-  ["react", "React"],
-  ["redux", "Redux"],
-  ["react-router", "React Router"],
-  ["nodejs", "Node.js"],
-  ["express", "Express"],
-  ["mongodb", "MongoDB"],
-  ["react-native", "React Native"],
-  ["html", "HTML"],
-  ["css", "CSS"],
-  ["materialui", "Material UI"],
-  ["styled-components", "Styled components"],
-  ["graphql", "GraphQL"],
-  ["nextjs", "Next.js"],
-  ["api", "API"],
-  ["figma", "Figma"],
-  ["cms", "CMS"],
-])
+import { devTopics } from "data/devTopics"
+import { techTopicsDictionary } from "data/techTopicsDictionary"
 
 export const fixProjectTopic = (topic: string) => {
   if (techTopicsDictionary.has(topic)) {
@@ -35,12 +11,13 @@ export const fixProjectTopic = (topic: string) => {
   }
 }
 
+// used only once, maybe put it back in its component?
 export const fixThoughtTopic = (topic: string) => topic.replaceAll("-", "")
 
 // allows the items NOT in the dictionary to be added at the end
-export const sortTopics = (topics: string[]) => {
+const sortTopics = (topics: string[]) => {
   const techTopicsOrder = Array.from(techTopicsDictionary.keys())
-  return topics.sort((a, b) => {
+  const sortedTopics = topics.sort((a, b) => {
     if (techTopicsOrder.includes(a) && techTopicsOrder.includes(b)) {
       return techTopicsOrder.indexOf(a) - techTopicsOrder.indexOf(b)
     } else if (techTopicsOrder.includes(a)) {
@@ -50,9 +27,25 @@ export const sortTopics = (topics: string[]) => {
     }
     return 0
   })
+  return sortedTopics
 }
 
+export const setTopics = (project: Repo) =>
+  project.repositoryTopics.nodes.map((topic) => topic.topic.name)
 
-export const setTopics = (project: Repo) => project.repositoryTopics.nodes.map(
-  (topic) => topic.topic.name
-)
+export const topicsListFeatured = (project: Repo) => {
+  const topicsToKeep = setTopics(project).filter(
+    (topic) => !devTopics.includes(topic)
+  )
+  return sortTopics(topicsToKeep)
+}
+
+export const topicsListOther = (project: Repo) => {
+  const topicsToKeep = setTopics(project).filter(
+    (topic) =>
+      topic ===
+        setTopics(project).find((element) => devTopics.includes(element)) ||
+      !devTopics.includes(topic)
+  )
+  return sortTopics(topicsToKeep)
+}

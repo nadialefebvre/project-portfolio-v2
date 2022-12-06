@@ -2,28 +2,28 @@ import React, { useEffect } from "react"
 
 import { useAppDispatch } from "store/customHooks"
 
-import { fetchArticles } from "thunks/articles"
+import { fetchStories } from "thunks/stories"
 
 import { FeaturedThought } from "./FeaturedThought"
 import { OtherThought } from "./OtherThought"
 
 import { Loader } from "components/Loader"
 import { Section } from "components/Section"
-import { useArticlesState, useIsLoadingState } from "selectors/articles"
+import { useStoriesState, useIsLoadingState } from "selectors/stories"
 
 // maybe add a JSON file with data here as backup if api isn't working???
 
 // solution if no thumbnail?
 
-// Medium feed has only the last 10 articles: what should I do with that?
-// add link to all stories on Medium? no way to find how many articles have been published...
+// Medium feed has only the last 10 stories: what should I do with that?
+// add link to all stories on Medium? no way to find how many stories have been published...
 const Thoughts = () => {
   const dispatch = useAppDispatch()
   const isLoading = useIsLoadingState()
-  const articles = useArticlesState()
+  const stories = useStoriesState()
 
   useEffect(() => {
-    dispatch(fetchArticles())
+    dispatch(fetchStories())
   }, [dispatch])
 
   // maybe try to find a way to fix the fact that it's updating very slowly compared to API...
@@ -35,10 +35,10 @@ const Thoughts = () => {
         isLoading ? (
           <Loader item="featured thoughts" />
         ) : (
-          articles
+          stories
             .slice(0, 2)
-            .map((article) => (
-              <FeaturedThought thought={article} key={article.guid} />
+            .map((story) => (
+              <FeaturedThought thought={story} key={story.guid} />
             ))
         )
       }
@@ -47,10 +47,10 @@ const Thoughts = () => {
         isLoading ? (
           <Loader item="other thoughts" />
         ) : (
-          articles
+          stories
             .slice(2)
-            .map((article) => (
-              <OtherThought thought={article} key={article.guid} />
+            .map((story) => (
+              <OtherThought thought={story} key={story.guid} />
             ))
         )
       }

@@ -27,6 +27,7 @@ const Projects = () => {
     dispatch(fetchRepos())
   }, [dispatch])
 
+  // should I put this function in another file or not ?
   const setNotPinnedRepos = () => {
     const pinnedReposIDs = pinnedRepos?.map((repo) => repo.id)
 
