@@ -1,6 +1,6 @@
 import React from "react"
 
-import animation from "lotties/animated-dots.json"
+import animation from "data/animated-dots.json"
 
 import data from "data/user.json"
 
