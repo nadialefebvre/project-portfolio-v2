@@ -1,7 +1,7 @@
 export const techTopicsDictionary = new Map([
+  ["fullstack", "Fullstack"],
   ["frontend", "Frontend"],
   ["backend", "Backend"],
-  ["fullstack", "Fullstack"],
   ["mobile", "Mobile"],
   ["typescript", "TypeScript"],
   ["javascript", "JavaScript"],
