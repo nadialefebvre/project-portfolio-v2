@@ -1,16 +1,15 @@
 import React, { useEffect } from "react"
 
-import { useAppSelector, useAppDispatch } from "App/hooks"
+import { useAppDispatch } from "store/customHooks"
 
-import { fetchArticles } from "reducers/articles"
+import { fetchArticles } from "thunks/articles"
 
 import { FeaturedThought } from "./FeaturedThought"
 import { OtherThought } from "./OtherThought"
 
-import { Article } from "./Thoughts.types"
-
 import { Loader } from "components/Loader"
 import { Section } from "components/Section"
+import { useArticlesState, useIsLoadingState } from "selectors/articles"
 
 // maybe add a JSON file with data here as backup if api isn't working???
 
@@ -20,9 +19,8 @@ import { Section } from "components/Section"
 // add link to all stories on Medium? no way to find how many articles have been published...
 const Thoughts = () => {
   const dispatch = useAppDispatch()
-
-  const isLoading = useAppSelector((store) => store.articles.isLoading)
-  const articles = useAppSelector((state) => state.articles.articles)
+  const isLoading = useIsLoadingState()
+  const articles = useArticlesState()
 
   useEffect(() => {
     dispatch(fetchArticles())
@@ -39,7 +37,7 @@ const Thoughts = () => {
         ) : (
           articles
             .slice(0, 2)
-            .map((article: Article) => (
+            .map((article) => (
               <FeaturedThought thought={article} key={article.guid} />
             ))
         )
@@ -51,7 +49,7 @@ const Thoughts = () => {
         ) : (
           articles
             .slice(2)
-            .map((article: Article) => (
+            .map((article) => (
               <OtherThought thought={article} key={article.guid} />
             ))
         )

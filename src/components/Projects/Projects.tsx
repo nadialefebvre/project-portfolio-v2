@@ -1,38 +1,45 @@
 import React, { useEffect } from "react"
 
-import { useAppSelector, useAppDispatch } from "App/hooks"
+import { useAppDispatch } from "store/customHooks"
 
-import { fetchRepos } from "reducers/repos"
+import { fetchRepos } from "thunks/repos"
 
 import FeaturedProject from "./FeaturedProject"
 import OtherProject from "./OtherProject"
 
 import { Loader } from "components/Loader"
 
-import { Repo } from "./Projects.types"
-
 import { Section } from "components/Section"
+import {
+  useAllReposState,
+  useIsLoadingState,
+  usePinnedReposState,
+} from "selectors/repos"
 
 const Projects = () => {
   const dispatch = useAppDispatch()
 
-  const isLoading = useAppSelector((store) => store.repos.isLoading)
-  const allRepos = useAppSelector((state) => state.repos.allRepos)
-  const pinnedRepos = useAppSelector((state) => state.repos.pinnedRepos)
+  const isLoading = useIsLoadingState()
+  const allRepos = useAllReposState()
+  const pinnedRepos = usePinnedReposState()
 
   useEffect(() => {
     dispatch(fetchRepos())
   }, [dispatch])
 
-  const pinnedReposIDs = pinnedRepos?.map((repo) => repo.id)
+  const setNotPinnedRepos = () => {
+    const pinnedReposIDs = pinnedRepos?.map((repo) => repo.id)
 
-  const notPinnedRepos = allRepos?.filter(
-    (repo) => !pinnedReposIDs?.includes(repo.id)
-  )
+    const notPinnedRepos = allRepos?.filter(
+      (repo) => !pinnedReposIDs?.includes(repo.id)
+    )
 
-  const notPinnedReposSorted = notPinnedRepos?.sort(
-    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-  )
+    const notPinnedReposSorted = notPinnedRepos?.sort(
+      (a, b) =>
+        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    )
+    return notPinnedReposSorted
+  }
 
   return (
     <Section
@@ -41,7 +48,7 @@ const Projects = () => {
         isLoading ? (
           <Loader item="featured projects" />
         ) : (
-          pinnedRepos.map((repo: Repo) => (
+          pinnedRepos.map((repo) => (
             <FeaturedProject project={repo} key={repo.id} />
           ))
         )
@@ -51,7 +58,7 @@ const Projects = () => {
         isLoading ? (
           <Loader item="other projects" />
         ) : (
-          notPinnedReposSorted.map((repo: Repo) => (
+          setNotPinnedRepos().map((repo) => (
             <OtherProject project={repo} key={repo.id} />
           ))
         )

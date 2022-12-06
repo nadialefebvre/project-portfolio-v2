@@ -1,9 +1,10 @@
 import React from "react"
 
 import { Provider } from "react-redux"
-import { store } from "./store"
 
 import { ThemeProvider } from "styled-components"
+
+import { store } from "store/configureStore"
 
 import { theme } from "utils/theme"
 
