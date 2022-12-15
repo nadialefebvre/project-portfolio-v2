@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Provider } from "react-redux"
+import { Provider as ReduxProvider } from "react-redux"
 
 import { ThemeProvider } from "styled-components"
 
@@ -22,7 +22,7 @@ import {
 import { GlobalStyle } from "App/App.styles"
 
 const App = () => (
-  <Provider store={store}>
+  <ReduxProvider store={store}>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Header />
@@ -34,7 +34,7 @@ const App = () => (
       <ForMore />
       <Footer />
     </ThemeProvider>
-  </Provider>
+  </ReduxProvider>
 )
 
 export default App
