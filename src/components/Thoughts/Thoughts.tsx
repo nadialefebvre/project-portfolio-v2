@@ -9,7 +9,13 @@ import { OtherThought } from "./OtherThought"
 
 import { Loader } from "components/Loader"
 import { Section } from "components/Section"
-import { useStoriesState, useIsLoadingState } from "selectors/stories"
+import {
+  useStoriesState,
+  useIsLoadingState,
+  useErrorState,
+} from "selectors/stories"
+
+import { Error } from "components/Error"
 
 // maybe add a JSON file with data here as backup if api isn't working???
 
@@ -19,41 +25,31 @@ import { useStoriesState, useIsLoadingState } from "selectors/stories"
 // add link to all stories on Medium? no way to find how many stories have been published...
 const Thoughts = () => {
   const dispatch = useAppDispatch()
-  const isLoading = useIsLoadingState()
+
   const stories = useStoriesState()
+  const isLoading = useIsLoadingState()
+  const error = useErrorState()
 
   useEffect(() => {
     dispatch(fetchStories())
   }, [dispatch])
 
-  // maybe try to find a way to fix the fact that it's updating very slowly compared to API...
-  return (
+  return isLoading || error !== "" ? (
+    <Section title="My thoughts" extraTitle=" about code">
+      {isLoading && <Loader />}
+      {!isLoading && error !== "" && <Error item="thoughts" error={error} />}
+    </Section>
+  ) : (
     <Section
       title="My thoughts"
       extraTitle=" about code"
-      featured={
-        isLoading ? (
-          <Loader item="featured thoughts" />
-        ) : (
-          stories
-            .slice(0, 2)
-            .map((story) => (
-              <FeaturedThought thought={story} key={story.guid} />
-            ))
-        )
-      }
+      featured={stories.slice(0, 2).map((story) => (
+        <FeaturedThought thought={story} key={story.guid} />
+      ))}
       subtitle="More thoughts"
-      other={
-        isLoading ? (
-          <Loader item="other thoughts" />
-        ) : (
-          stories
-            .slice(2)
-            .map((story) => (
-              <OtherThought thought={story} key={story.guid} />
-            ))
-        )
-      }
+      other={stories.slice(2).map((story) => (
+        <OtherThought thought={story} key={story.guid} />
+      ))}
     />
   )
 }

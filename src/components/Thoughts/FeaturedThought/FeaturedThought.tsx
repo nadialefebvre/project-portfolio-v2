@@ -28,13 +28,10 @@ const FeaturedThought = ({ thought }: Props) => {
         aria-label="Go to story on Medium"
         target="_blank"
         rel="noopener noreferrer"
+        title={`${thought.title} - story`}
       >
         <Styled.ImageContainer>
-          <Styled.Image
-            src={thought.thumbnail}
-            alt={thought.title}
-            title={thought.title}
-          />
+          <Styled.Image src={thought.thumbnail} alt={thought.title} />
         </Styled.ImageContainer>
         <div>
           <Styled.DateString>

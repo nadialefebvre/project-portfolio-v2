@@ -13,6 +13,9 @@ export const fetchStories = () => {
         dispatch(stories.actions.setStories(res.items))
         dispatch(stories.actions.setIsLoading(false))
       })
-      .catch((err) => console.log(err))
+      .catch((error) => {
+        dispatch(stories.actions.setError(error))
+        console.error(error)
+      })
   }
 }

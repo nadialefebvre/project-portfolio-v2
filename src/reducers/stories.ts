@@ -5,11 +5,13 @@ import { Story } from "components/Thoughts/Thoughts.types"
 interface StoriesState {
   stories: Story[]
   isLoading: boolean
+  error: string
 }
 
 const initialState: StoriesState = {
   stories: [],
   isLoading: true,
+  error: "",
 }
 
 const stories = createSlice({
@@ -21,6 +23,9 @@ const stories = createSlice({
     },
     setIsLoading: (store, action) => {
       store.isLoading = action.payload
+    },
+    setError: (store, action) => {
+      store.error = action.payload
     },
   },
 })

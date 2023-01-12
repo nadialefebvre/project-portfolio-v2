@@ -17,6 +17,7 @@ const OtherThought = ({ thought }: Props) => (
       aria-label="Go to story on Medium"
       target="_blank"
       rel="noopener noreferrer"
+      title={`${thought.title} - story`}
     >
       <Styled.Title>
         <Styled.DateString>
