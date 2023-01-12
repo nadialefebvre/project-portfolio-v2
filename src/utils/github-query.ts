@@ -29,21 +29,6 @@ export const githubQuery = gql`{
     }
   }
 }
-
-fragment repoFields on Repository {
-  id
-  name
-  description
-  url
-  homepageUrl
-  repositoryTopics(first: 100) {
-      nodes {
-          topic {
-              name
-          }
-      }
-  }
-}
 `
 
 /*
