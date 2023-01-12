@@ -4,7 +4,7 @@ import { Tags } from "components/Tags"
 
 import { topicsListOther, fixProjectTopic } from "utils/project-topics"
 
-import { shortName } from "utils/project-name"
+import { shortName, longNameInTitleCase } from "utils/project-name"
 
 import { Repo } from "../Projects.types"
 
@@ -16,7 +16,12 @@ interface Props {
 
 const OtherProject = ({ project }: Props) => (
   <Styled.Article>
-    <a href={project.url} target="_blank" rel="noopener noreferrer">
+    <a
+      href={project.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={`${longNameInTitleCase(project.name)} - repository`}
+    >
       <Styled.TextContainer>
         <Styled.Title>{`${shortName(project.name)}.`}</Styled.Title>
         <Styled.Description>

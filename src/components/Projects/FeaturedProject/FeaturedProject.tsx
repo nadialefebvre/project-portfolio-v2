@@ -2,7 +2,11 @@ import React from "react"
 
 import { Tags } from "components/Tags"
 
-import { topicsListFeatured, fixProjectTopic, projectType } from "utils/project-topics"
+import {
+  topicsListFeatured,
+  fixProjectTopic,
+  projectType,
+} from "utils/project-topics"
 
 import { shortName, longNameInTitleCase } from "utils/project-name"
 
@@ -24,35 +28,31 @@ const FeaturedProject = ({ project }: Props) => {
     return `https://raw.githubusercontent.com/${username}/${projectName}/${defaultBranch}/screenshot.jpg`
   }
 
-  // const projectImageSrc = `https://raw.githubusercontent.com/${data.infos.usernameGitHub}/${project.name}/${project.defaultBranchRef.name}/screenshot.jpg`
-
   return (
     <Styled.Article>
       <a
         href={project.homepageUrl}
-        aria-label={`Go to deployed project - ${shortName(
-          project.name
-        )}`}
+        aria-label={`Go to deployed project - ${shortName(project.name)}`}
         target="_blank"
         rel="noopener noreferrer"
+        title={`${longNameInTitleCase(project.name)} - website`}
       >
         <Styled.ImageContainer>
           <Styled.Image
             src={projectImageSrc()}
             alt={longNameInTitleCase(project.name)}
           />
-          <Styled.ImageOverlay title={longNameInTitleCase(project.name)}>
+          <Styled.ImageOverlay>
             <h3>{shortName(project.name)}</h3>
           </Styled.ImageOverlay>
         </Styled.ImageContainer>
       </a>
       <a
         href={project.url}
-        aria-label={`Go to project repository - ${shortName(
-          project.name
-        )}`}
+        aria-label={`Go to project repository - ${shortName(project.name)}`}
         target="_blank"
         rel="noopener noreferrer"
+        title={`${longNameInTitleCase(project.name)} - repository`}
       >
         <Styled.Title>{`${projectType(project)}.`}</Styled.Title>
         <Styled.Description>{project.description}</Styled.Description>
