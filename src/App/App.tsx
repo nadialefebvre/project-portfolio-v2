@@ -12,20 +12,18 @@ import { theme } from "constants/theme"
 
 import { githubEndpoint, GITHUB_TOKEN } from "constants/github"
 
-// import {
-//   Header,
-//   Intro,
-//   Tech,
-//   Projects,
-//   Thoughts,
-//   Skills,
-//   ForMore,
-//   Footer,
-// } from "components"
+import {
+  Header,
+  Intro,
+  Tech,
+  Projects,
+  Thoughts,
+  Skills,
+  ForMore,
+  Footer,
+} from "components"
 
 import { GlobalStyle } from "App/App.styles"
-
-import { githubQuery } from "utils/github-query"
 
 const client = new ApolloClient({
   uri: githubEndpoint,
@@ -35,24 +33,19 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 })
 
-client
-  .query({
-    query: githubQuery})
-  .then((result) => console.log(result))
-
 const App = () => (
   <ApolloProvider client={client}>
     <ReduxProvider store={store}>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        {/* <Header />
+        <Header />
         <Intro />
         <Tech />
         <Projects />
         <Thoughts />
         <Skills />
         <ForMore />
-        <Footer /> */}
+        <Footer />
       </ThemeProvider>
     </ReduxProvider>
   </ApolloProvider>
