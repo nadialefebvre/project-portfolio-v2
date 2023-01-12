@@ -12,16 +12,19 @@ import { Loader } from "components/Loader"
 import { Section } from "components/Section"
 import {
   useAllReposState,
-  useIsLoadingState,
   usePinnedReposState,
+  useIsLoadingState,
+  useErrorState,
 } from "selectors/repos"
+import { Error } from "components/Error"
 
 const Projects = () => {
   const dispatch = useAppDispatch()
 
-  const isLoading = useIsLoadingState()
   const allRepos = useAllReposState()
   const pinnedRepos = usePinnedReposState()
+  const isLoading = useIsLoadingState()
+  const error = useErrorState()
 
   useEffect(() => {
     dispatch(fetchRepos())
@@ -44,28 +47,21 @@ const Projects = () => {
     return notPinnedReposSorted
   }
 
-  return (
+  return isLoading || error !== "" ? (
+    <Section title="Featured projects">
+      {isLoading && <Loader />}
+      {!isLoading && error !== "" && <Error item="projects" error={error} />}
+    </Section>
+  ) : (
     <Section
       title="Featured projects"
-      featured={
-        isLoading ? (
-          <Loader item="featured projects" />
-        ) : (
-          pinnedRepos.map((repo) => (
-            <FeaturedProject project={repo} key={repo.id} />
-          ))
-        )
-      }
+      featured={pinnedRepos.map((repo) => (
+        <FeaturedProject project={repo} key={repo.id} />
+      ))}
       subtitle="Other projects"
-      other={
-        isLoading ? (
-          <Loader item="other projects" />
-        ) : (
-          setNotPinnedRepos().map((repo) => (
-            <OtherProject project={repo} key={repo.id} />
-          ))
-        )
-      }
+      other={setNotPinnedRepos().map((repo) => (
+        <OtherProject project={repo} key={repo.id} />
+      ))}
     />
   )
 }
