@@ -1,37 +1,5 @@
-import { gql } from "@apollo/client"
-
 import data from "data/user.json"
 
-export const githubQuery = gql`{
-  search
-    (first: 100,
-    type: REPOSITORY,
-    query: "user:${data.infos.usernameGitHub} fork:true project in:name")
-    {
-      nodes {
-        ... repoFields
-        ... on Repository {
-          createdAt
-        }
-      }
-    }
-
-  user(login: "${data.infos.usernameGitHub}") {
-    pinnedItems(last: 100, types: REPOSITORY) {
-      nodes {
-        ... repoFields
-        ... on Repository {
-          defaultBranchRef {
-            name
-          }
-        }
-      }
-    }
-  }
-}
-`
-
-/*
 export const githubQuery = `{
   search
     (first: 100,
@@ -74,5 +42,3 @@ fragment repoFields on Repository {
       }
   }
 }`
-
-*/

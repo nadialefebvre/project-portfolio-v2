@@ -1,50 +1,29 @@
-/*
 import repos from "reducers/repos"
 
 import { AppDispatch } from "store/types"
 
 import { githubQuery } from "utils/github-query"
 
-import { useQuery } from "@apollo/client"
-import { useFetchData } from 'thunks/test';
+import { githubEndpoint, GITHUB_TOKEN } from "constants/github"
 
 export const fetchRepos = () => {
   return (dispatch: AppDispatch) => {
-    const { loading, error, data } = useFetchData()
-
-    if (loading) {
-      console.log("I am loading")
-    }
-
-    if (error) {
-      console.log("I am an error")
-    }
-
-    dispatch(repos.actions.setAllRepos(data.search.nodes))
-    dispatch(repos.actions.setPinnedRepos(data.user.pinnedItems.nodes))
-    dispatch(repos.actions.setIsLoading(false))
-  }
-}
-*/
-
-import { useFetchData } from 'thunks/test';
-import repos from "reducers/repos"
-import { AppDispatch } from "store/types"
-
-export const fetchRepos = () => {
-  return (dispatch: AppDispatch) => {
-    const { loading, error, data } = useFetchData()
-
-    if (loading) {
-      console.log("I am loading")
-    }
-
-    if (error) {
-      console.log("I am an error")
-    }
-
-    dispatch(repos.actions.setAllRepos(data.search.nodes))
-    dispatch(repos.actions.setPinnedRepos(data.user.pinnedItems.nodes))
-    dispatch(repos.actions.setIsLoading(false))
+    dispatch(repos.actions.setIsLoading(true))
+    fetch(githubEndpoint, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${GITHUB_TOKEN}`,
+      },
+      body: JSON.stringify({
+        query: githubQuery,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        dispatch(repos.actions.setAllRepos(res.data.search.nodes))
+        dispatch(repos.actions.setPinnedRepos(res.data.user.pinnedItems.nodes))
+        dispatch(repos.actions.setIsLoading(false))
+      })
+      .catch((err) => console.log(err))
   }
 }
