@@ -21,8 +21,6 @@ import { Error } from "components/Error"
 
 // solution if no thumbnail?
 
-// Medium feed has only the last 10 stories: what should I do with that?
-// add link to all stories on Medium? no way to find how many stories have been published...
 const Thoughts = () => {
   const dispatch = useAppDispatch()
 
