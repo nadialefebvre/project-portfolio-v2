@@ -6,12 +6,14 @@ interface ReposState {
   allRepos: Repo[]
   pinnedRepos: Repo[]
   isLoading: boolean
+  error: string
 }
 
 const initialState: ReposState = {
   allRepos: [],
   pinnedRepos: [],
   isLoading: true,
+  error: "",
 }
 
 const repos = createSlice({
@@ -26,6 +28,9 @@ const repos = createSlice({
     },
     setIsLoading: (store, action) => {
       store.isLoading = action.payload
+    },
+    setError: (store, action) => {
+      store.error = action.payload
     },
   },
 })
