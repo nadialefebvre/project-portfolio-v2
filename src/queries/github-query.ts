@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client"
 
-import data from "data/user.json"
+import data from "mapping-data/user.json"
 
 export const githubQuery = gql`{
   search

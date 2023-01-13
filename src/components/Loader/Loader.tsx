@@ -1,6 +1,6 @@
 import React from "react"
 
-import animation from "data/animated-dots.json"
+import animation from "animations/animated-dots.json"
 
 import * as Styled from "./Loader.styles"
 

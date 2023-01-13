@@ -1,6 +1,6 @@
 import React from "react"
 
-import data from "data/tech.json"
+import data from "mapping-data/tech.json"
 
 import * as Styled from "./Tech.styles"
 

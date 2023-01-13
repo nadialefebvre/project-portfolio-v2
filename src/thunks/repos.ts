@@ -1,7 +1,7 @@
 import repos from "reducers/repos"
 import { client } from "App/App"
 import { AppDispatch } from "store/types"
-import { githubQuery } from "utils/github-query"
+import { githubQuery } from "queries/github-query"
 
 export const fetchRepos = () => {
   return async (dispatch: AppDispatch) => {

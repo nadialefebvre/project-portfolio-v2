@@ -2,7 +2,7 @@ import React from "react"
 
 import { setIcon } from "utils/socials-icons"
 
-import data from "data/user.json"
+import data from "mapping-data/user.json"
 
 import { Section } from "components/Section"
 

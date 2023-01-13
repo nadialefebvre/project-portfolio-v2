@@ -1,6 +1,6 @@
 import React from "react"
 
-import data from "data/skills.json"
+import data from "mapping-data/skills.json"
 
 import * as Styled from "./Skills.styles"
 

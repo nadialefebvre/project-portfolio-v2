@@ -1,7 +1,7 @@
 import { Repo } from "components/Projects/Projects.types"
 
-import { devTopics } from "data/devTopics"
-import { techTopicsDictionary } from "data/techTopicsDictionary"
+import { devTopics } from "reference-data/devTopics"
+import { techTopicsDictionary } from "reference-data/techTopicsDictionary"
 
 export const fixProjectTopic = (topic: string) => {
   if (techTopicsDictionary.has(topic)) {
@@ -47,8 +47,6 @@ export const topicsListOther = (project: Repo) => {
   return sortTopics(topicsToKeep)
 }
 
-
-// used only once, maybe put it back in its component?
 export const projectType = (project: Repo) => {
   if (setTopics(project).includes("fullstack")) {
     return "Fullstack web app"

@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components/macro"
 
-import { media } from "utils/media-queries"
+import { media } from "styles/media-queries"
 
 export const TagsContainer = styled.div`
   display: flex;

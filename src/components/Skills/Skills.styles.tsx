@@ -1,6 +1,6 @@
 import styled from "styled-components/macro"
 
-import { media } from "utils/media-queries"
+import { media } from "styles/media-queries"
 
 export const Container = styled.div`
   font-family: "Roboto", sans-serif;

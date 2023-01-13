@@ -7,7 +7,6 @@ import {
   FaMediumM,
 } from "react-icons/fa"
 
-// should find a better way to do this...
 export const setIcon = (name: string) => {
   if (name === "Linkedin") return <FaLinkedinIn />
   else if (name === "Stack Overflow") return <FaStackOverflow />

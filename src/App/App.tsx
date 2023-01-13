@@ -12,7 +12,7 @@ import { ThemeProvider } from "styled-components"
 
 import { store } from "store/configureStore"
 
-import { theme } from "constants/theme"
+import { theme } from "styles/theme"
 
 import {
   Header,

@@ -2,7 +2,7 @@ import styled from "styled-components/macro"
 
 import { MdErrorOutline } from "react-icons/md"
 
-import { media } from "utils/media-queries"
+import { media } from "styles/media-queries"
 
 export const IconBox = styled.div`
   display: flex;

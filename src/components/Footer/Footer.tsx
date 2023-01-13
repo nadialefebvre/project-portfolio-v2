@@ -1,6 +1,6 @@
 import React from "react"
 
-import data from "data/user.json"
+import data from "mapping-data/user.json"
 
 import * as Styled from "./Footer.styles"
 

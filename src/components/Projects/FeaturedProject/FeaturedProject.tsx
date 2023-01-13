@@ -10,7 +10,7 @@ import {
 
 import { shortName, longNameInTitleCase } from "utils/project-name"
 
-import data from "data/user.json"
+import data from "mapping-data/user.json"
 
 import { Repo } from "../Projects.types"
 
