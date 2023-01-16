@@ -1,21 +1,17 @@
 import React, { useEffect } from "react"
 
-import { useAppDispatch } from "store/customHooks"
-
 import { fetchStories } from "thunks/stories"
-
+import { Loader } from "components/Loader"
+import { Error } from "components/Error"
+import { Section } from "components/Section"
 import { FeaturedThought } from "./FeaturedThought"
 import { OtherThought } from "./OtherThought"
-
-import { Loader } from "components/Loader"
-import { Section } from "components/Section"
+import { useAppDispatch } from "store/customHooks"
 import {
   useStoriesState,
   useIsLoadingState,
   useErrorState,
 } from "selectors/stories"
-
-import { Error } from "components/Error"
 
 // maybe add a JSON file with data here as backup if api isn't working???
 

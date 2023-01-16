@@ -1,10 +1,9 @@
 import React from "react"
 
+import { formattedDate } from "utils/formattedDate"
 import { Story } from "../Thoughts.types"
 
 import * as Styled from "./OtherThought.styles"
-
-import { formattedDateFunction } from "utils/date"
 
 interface Props {
   thought: Story
@@ -21,7 +20,7 @@ const OtherThought = ({ thought }: Props) => (
     >
       <Styled.Title>
         <Styled.DateString>
-          {`${formattedDateFunction(thought.pubDate)}.`}
+          {`${formattedDate(thought.pubDate)}.`}
         </Styled.DateString>
         {` ${thought.title} `}
         <Styled.Arrows aria-hidden="true">&gt;&gt;</Styled.Arrows>

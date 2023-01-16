@@ -1,11 +1,8 @@
 import React from "react"
 
 import { Tags } from "components/Tags"
-
 import { topicsListOther, fixProjectTopic } from "utils/project-topics"
-
 import { shortName, longNameInTitleCase } from "utils/project-name"
-
 import { Repo } from "../Projects.types"
 
 import * as Styled from "./OtherProject.styles"

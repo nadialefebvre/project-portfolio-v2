@@ -14,7 +14,7 @@ export const TextContainer = styled.div`
 
 export const Title = styled.h3`
   text-transform: uppercase;
-  color: ${props => props.theme.primary};
+  color: ${(props) => props.theme.primary};
   letter-spacing: 0.01em;
   font-size: 17px;
   line-height: 132%;
@@ -25,7 +25,7 @@ export const Title = styled.h3`
     line-height: 164%;
     text-decoration-line: underline;
     text-underline-position: under;
-    &:hover {
+    :hover {
       text-decoration-line: underline;
       text-underline-position: under;
     }
@@ -44,10 +44,10 @@ export const Description = styled.p`
     text-decoration-line: underline;
     text-underline-position: under;
     white-space: pre;
-    &:before {
+    :before {
       content: " ";
     }
-    &:hover {
+    :hover {
       text-decoration-line: underline;
       text-underline-position: under;
     }
@@ -55,7 +55,7 @@ export const Description = styled.p`
 `
 
 export const Arrows = styled.span`
-  color: ${props => props.theme.primary};
+  color: ${(props) => props.theme.primary};
   font-weight: 700;
   ${media.desktopUp} {
     text-decoration-line: underline;

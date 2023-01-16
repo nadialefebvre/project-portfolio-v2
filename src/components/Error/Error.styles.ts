@@ -1,5 +1,4 @@
 import styled from "styled-components/macro"
-
 import { MdErrorOutline } from "react-icons/md"
 
 import { media } from "styles/media-queries"
@@ -8,6 +7,7 @@ export const IconBox = styled.div`
   display: flex;
   justify-content: center;
 `
+
 export const Icon = styled(MdErrorOutline)`
   color: ${(props) => props.theme.secondary};
   width: 40px;

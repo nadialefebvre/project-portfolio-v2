@@ -13,7 +13,7 @@ export const Tag = styled.span<{ isItalic: boolean }>`
   line-height: 122%;
   text-align: center;
   letter-spacing: 0.01em;
-  background-color: ${props => props.theme.lightPrimary};
+  background-color: ${(props) => props.theme.lightPrimary};
   padding: 5px;
   margin-right: 6px;
   margin-bottom: 6px;
@@ -28,8 +28,4 @@ export const Tag = styled.span<{ isItalic: boolean }>`
   ${media.desktopUp} {
     line-height: 131%;
   }
-`
-
-export const ItalicTag = styled(Tag)`
-  font-style: italic;
 `

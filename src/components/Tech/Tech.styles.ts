@@ -15,22 +15,16 @@ export const Text = styled.p`
   }
 `
 
-export const ColoredString = styled.span`
-  color: ${props => props.theme.primary};
-  font-weight: 500;
-  &:not(:last-child):after {
+export const RegularString = styled.span`
+  :not(:last-child):after {
     content: ", ";
   }
-  &:last-child:after {
+  :last-child:after {
     content: ".";
   }
 `
 
-export const RegularString = styled.span`
-  &:not(:last-child):after {
-    content: ", ";
-  }
-  &:last-child:after {
-    content: ".";
-  }
+export const ColoredString = styled(RegularString)`
+  color: ${(props) => props.theme.primary};
+  font-weight: 500;
 `

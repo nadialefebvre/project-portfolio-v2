@@ -1,10 +1,9 @@
 import React from "react"
 
+import { Section } from "components/Section"
 import data from "mapping-data/skills.json"
 
 import * as Styled from "./Skills.styles"
-
-import { Section } from "components/Section"
 
 const Skills = () => (
   <Section title="Skills">

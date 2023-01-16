@@ -1,4 +1,4 @@
-import { fixTopic } from "utils/thought-topics"
+import { fixTopic } from "utils/fixTopic"
 
 describe("thought topic", () => {
   it("fixTopic should return `codingskills`", () => {

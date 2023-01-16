@@ -1,7 +1,5 @@
 import stories from "reducers/stories"
-
 import { mediumEndpoint } from "constants/medium"
-
 import { AppDispatch } from "store/types"
 
 export const fetchStories = () => {

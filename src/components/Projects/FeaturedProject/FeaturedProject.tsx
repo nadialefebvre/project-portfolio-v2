@@ -1,17 +1,13 @@
 import React from "react"
 
 import { Tags } from "components/Tags"
-
 import {
   topicsListFeatured,
   fixProjectTopic,
   projectType,
 } from "utils/project-topics"
-
 import { shortName, longNameInTitleCase } from "utils/project-name"
-
 import data from "mapping-data/user.json"
-
 import { Repo } from "../Projects.types"
 
 import * as Styled from "./FeaturedProject.styles"
@@ -21,12 +17,10 @@ interface Props {
 }
 
 const FeaturedProject = ({ project }: Props) => {
-  const projectImageSrc = () => {
-    const username = data.infos.usernameGitHub
-    const projectName = project.name
-    const defaultBranch = project.defaultBranchRef?.name
-    return `https://raw.githubusercontent.com/${username}/${projectName}/${defaultBranch}/screenshot.jpg`
-  }
+  const username = data.infos.usernameGitHub
+  const projectName = project.name
+  const defaultBranch = project.defaultBranchRef?.name
+  const projectImageSrc = `https://raw.githubusercontent.com/${username}/${projectName}/${defaultBranch}/screenshot.jpg`
 
   return (
     <Styled.Article>
@@ -39,7 +33,7 @@ const FeaturedProject = ({ project }: Props) => {
       >
         <Styled.ImageContainer>
           <Styled.Image
-            src={projectImageSrc()}
+            src={projectImageSrc}
             alt={longNameInTitleCase(project.name)}
           />
           <Styled.ImageOverlay>

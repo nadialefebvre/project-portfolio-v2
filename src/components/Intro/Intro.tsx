@@ -1,8 +1,7 @@
 import React from "react"
 
-import data from "mapping-data/user.json"
-
 import { Section } from "components/Section"
+import data from "mapping-data/user.json"
 
 import * as Styled from "./Intro.styles"
 

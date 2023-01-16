@@ -23,7 +23,7 @@ export const DateString = styled.span`
   font-size: 17px;
   font-weight: 400;
   text-transform: uppercase;
-  color: ${props => props.theme.primary};
+  color: ${(props) => props.theme.primary};
   text-decoration-line: underline;
   text-underline-position: under;
   ${media.tabletUp} {
@@ -35,7 +35,7 @@ export const DateString = styled.span`
 `
 
 export const Arrows = styled.span`
-  color: ${props => props.theme.primary};
+  color: ${(props) => props.theme.primary};
   text-decoration-line: underline;
   text-underline-position: under;
 `

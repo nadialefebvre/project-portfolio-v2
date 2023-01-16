@@ -1,14 +1,11 @@
 import React from "react"
 
 import { Tags } from "components/Tags"
-
-import { fixTopic } from "utils/thought-topics"
-
+import { fixTopic } from "utils/fixTopic"
+import { formattedDate } from "utils/formattedDate"
 import { Story } from "../Thoughts.types"
 
 import * as Styled from "./FeaturedThought.styles"
-
-import { formattedDateFunction } from "utils/date"
 
 interface Props {
   thought: Story
@@ -35,7 +32,7 @@ const FeaturedThought = ({ thought }: Props) => {
         </Styled.ImageContainer>
         <div>
           <Styled.DateString>
-            {formattedDateFunction(thought.pubDate)}
+            {formattedDate(thought.pubDate)}
           </Styled.DateString>
           <Styled.Title>{thought.title}</Styled.Title>
           <Styled.Text>

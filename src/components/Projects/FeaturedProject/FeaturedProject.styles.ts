@@ -42,7 +42,7 @@ export const ImageOverlay = styled.div`
   font-size: 28px;
   ${media.desktopUp} {
     transition: 0.3s ease;
-    &:hover {
+    :hover {
       background-color: transparent;
       color: transparent;
       outline: 3px solid ${(props) => props.theme.secondary};
@@ -63,7 +63,7 @@ export const Title = styled.h3`
   ${media.desktopUp} {
     margin-top: 45px;
     line-height: 164%;
-    &:hover {
+    :hover {
       text-decoration-line: underline;
       text-underline-position: under;
     }

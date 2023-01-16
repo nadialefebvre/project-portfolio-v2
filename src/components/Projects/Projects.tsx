@@ -1,22 +1,18 @@
 import React, { useEffect } from "react"
 
-import { useAppDispatch } from "store/customHooks"
-
-import { fetchRepos } from "thunks/repos"
-
+import { Loader } from "components/Loader"
+import { Error } from "components/Error"
+import { Section } from "components/Section"
 import FeaturedProject from "./FeaturedProject"
 import OtherProject from "./OtherProject"
-
-import { Loader } from "components/Loader"
-
-import { Section } from "components/Section"
+import { useAppDispatch } from "store/customHooks"
+import { fetchRepos } from "thunks/repos"
 import {
   useAllReposState,
   usePinnedReposState,
   useIsLoadingState,
   useErrorState,
 } from "selectors/repos"
-import { Error } from "components/Error"
 
 const Projects = () => {
   const dispatch = useAppDispatch()
@@ -30,7 +26,6 @@ const Projects = () => {
     dispatch(fetchRepos())
   }, [dispatch])
 
-  // should I put this function in another file or not ?
   const setNotPinnedRepos = () => {
     const pinnedReposIDs = pinnedRepos?.map((repo) => repo.id)
 
@@ -44,6 +39,7 @@ const Projects = () => {
       }
       return 0
     })
+
     return notPinnedReposSorted
   }
 

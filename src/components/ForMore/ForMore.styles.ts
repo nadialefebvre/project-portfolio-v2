@@ -8,7 +8,7 @@ export const Socials = styled.div`
 `
 
 export const Link = styled.a`
-  color: ${props => props.theme.primary};
+  color: ${(props) => props.theme.primary};
   font-size: 24px;
   ${media.tabletUp} {
     font-size: 42px;
@@ -37,24 +37,24 @@ export const Circle = styled.div`
   width: 60px;
   height: 60px;
   margin-bottom: 16px;
-  border: 2px solid ${props => props.theme.primary};
+  border: 2px solid ${(props) => props.theme.primary};
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   ${media.tabletUp} {
-    border: 3px solid ${props => props.theme.primary};
+    border: 3px solid ${(props) => props.theme.primary};
     width: 110px;
     height: 110px;
   }
   ${media.desktopUp} {
-    border: 4px solid ${props => props.theme.primary};
+    border: 4px solid ${(props) => props.theme.primary};
     width: 160px;
     height: 160px;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    &:hover {
+    :hover {
       transform: scale(1.12);
-      color: ${props => props.theme.secondary};
+      color: ${(props) => props.theme.secondary};
     }
   }
 `

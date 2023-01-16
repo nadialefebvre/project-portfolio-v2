@@ -1,7 +1,7 @@
-import { formattedDateFunction } from "utils/date"
+import { formattedDate } from "utils/formattedDate"
 
 describe("date", () => {
-  it("formattedDateFunction should return `Dec 2022`", () => {
-    expect(formattedDateFunction("2022-12-01 09:28:01")).toEqual("Dec 2022")
+  it("formattedDate should return `Dec 2022`", () => {
+    expect(formattedDate("2022-12-01 09:28:01")).toEqual("Dec 2022")
   })
 })

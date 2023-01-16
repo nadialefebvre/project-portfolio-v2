@@ -1,8 +1,7 @@
 import React from "react"
 
-import { setIcon } from "utils/socials-icons"
-
 import data from "mapping-data/user.json"
+import { setIcon } from "utils/setIcon"
 
 import * as Styled from "./Header.styles"
 

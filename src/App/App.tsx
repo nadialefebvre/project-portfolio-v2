@@ -1,18 +1,8 @@
 import React from "react"
 
+import { ApolloProvider } from "@apollo/client"
 import { Provider as ReduxProvider } from "react-redux"
-
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-} from "@apollo/client"
-
 import { ThemeProvider } from "styled-components"
-
-import { store } from "store/configureStore"
-
-import { theme } from "styles/theme"
 
 import {
   Header,
@@ -24,18 +14,11 @@ import {
   ForMore,
   Footer,
 } from "components"
+import { client } from "graphql/client"
+import { store } from "store/configureStore"
+import { theme } from "styles/theme"
 
 import { GlobalStyle } from "App/App.styles"
-
-import { githubEndpoint, GITHUB_TOKEN } from "constants/github"
-
-export const client = new ApolloClient({
-  uri: githubEndpoint,
-  headers: {
-    Authorization: `Bearer ${GITHUB_TOKEN}`,
-  },
-  cache: new InMemoryCache(),
-})
 
 const App = () => (
   <ApolloProvider client={client}>

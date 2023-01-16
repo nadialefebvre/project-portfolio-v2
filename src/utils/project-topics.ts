@@ -1,7 +1,6 @@
-import { Repo } from "components/Projects/Projects.types"
-
 import { devTopics } from "reference-data/devTopics"
 import { techTopicsDictionary } from "reference-data/techTopicsDictionary"
+import { Repo } from "components/Projects/Projects.types"
 
 export const fixProjectTopic = (topic: string) => {
   if (techTopicsDictionary.has(topic)) {
@@ -14,6 +13,7 @@ export const fixProjectTopic = (topic: string) => {
 // allows the items NOT in the dictionary to be added at the end
 export const sortTopics = (topics: string[]) => {
   const techTopicsOrder = Array.from(techTopicsDictionary.keys())
+
   const sortedTopics = topics.sort((a, b) => {
     if (techTopicsOrder.includes(a) && techTopicsOrder.includes(b)) {
       return techTopicsOrder.indexOf(a) - techTopicsOrder.indexOf(b)
@@ -24,6 +24,7 @@ export const sortTopics = (topics: string[]) => {
     }
     return 0
   })
+
   return sortedTopics
 }
 
@@ -34,6 +35,7 @@ export const topicsListFeatured = (project: Repo) => {
   const topicsToKeep = setTopics(project).filter(
     (topic) => !devTopics.includes(topic)
   )
+
   return sortTopics(topicsToKeep)
 }
 
@@ -44,6 +46,7 @@ export const topicsListOther = (project: Repo) => {
         setTopics(project).find((element) => devTopics.includes(element)) ||
       !devTopics.includes(topic)
   )
+
   return sortTopics(topicsToKeep)
 }
 
