@@ -1,6 +1,6 @@
 import { devTopics } from "reference-data/devTopics"
 import { techTopicsDictionary } from "reference-data/techTopicsDictionary"
-import { Repo } from "components/Projects/Projects.types"
+import { RepoInterface } from "components/Projects"
 
 export const fixProjectTopic = (topic: string) => {
   if (techTopicsDictionary.has(topic)) {
@@ -28,10 +28,10 @@ export const sortTopics = (topics: string[]) => {
   return sortedTopics
 }
 
-const setTopics = (project: Repo) =>
+const setTopics = (project: RepoInterface) =>
   project.repositoryTopics.nodes.map((topic) => topic.topic.name)
 
-export const topicsListFeatured = (project: Repo) => {
+export const topicsListFeatured = (project: RepoInterface) => {
   const topicsToKeep = setTopics(project).filter(
     (topic) => !devTopics.includes(topic)
   )
@@ -39,7 +39,7 @@ export const topicsListFeatured = (project: Repo) => {
   return sortTopics(topicsToKeep)
 }
 
-export const topicsListOther = (project: Repo) => {
+export const topicsListOther = (project: RepoInterface) => {
   const topicsToKeep = setTopics(project).filter(
     (topic) =>
       topic ===
@@ -50,7 +50,7 @@ export const topicsListOther = (project: Repo) => {
   return sortTopics(topicsToKeep)
 }
 
-export const projectType = (project: Repo) => {
+export const projectType = (project: RepoInterface) => {
   if (setTopics(project).includes("fullstack")) {
     return "Fullstack web app"
   } else if (setTopics(project).includes("mobile")) {

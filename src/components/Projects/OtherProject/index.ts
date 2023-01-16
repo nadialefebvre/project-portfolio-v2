@@ -1,3 +1,3 @@
 import OtherProject from "./OtherProject"
 
-export default OtherProject
+export { OtherProject }

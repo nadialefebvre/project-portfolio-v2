@@ -1,3 +1,3 @@
 import Tech from "./Tech"
 
-export default Tech
+export { Tech }

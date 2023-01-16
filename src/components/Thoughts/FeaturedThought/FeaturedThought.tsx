@@ -3,12 +3,12 @@ import React from "react"
 import { Tags } from "components/Tags"
 import { fixTopic } from "utils/fixTopic"
 import { formattedDate } from "utils/formattedDate"
-import { Story } from "../Thoughts.types"
+import { StoryInterface } from "components/Thoughts"
 
 import * as Styled from "./FeaturedThought.styles"
 
 interface Props {
-  thought: Story
+  thought: StoryInterface
 }
 
 const FeaturedThought = ({ thought }: Props) => {

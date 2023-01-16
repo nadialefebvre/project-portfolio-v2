@@ -8,12 +8,12 @@ import {
 } from "utils/project-topics"
 import { shortName, longNameInTitleCase } from "utils/project-name"
 import data from "mapping-data/user.json"
-import { Repo } from "../Projects.types"
+import { RepoInterface } from "components/Projects"
 
 import * as Styled from "./FeaturedProject.styles"
 
 interface Props {
-  project: Repo
+  project: RepoInterface
 }
 
 const FeaturedProject = ({ project }: Props) => {

@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
-import { Story } from "components/Thoughts/Thoughts.types"
+import { StoryInterface } from "components/Thoughts"
 
 interface StoriesState {
-  stories: Story[]
+  stories: StoryInterface[]
   isLoading: boolean
   error: string
 }
@@ -18,7 +18,7 @@ const stories = createSlice({
   name: "stories",
   initialState,
   reducers: {
-    setStories: (state, action: PayloadAction<Story[]>) => {
+    setStories: (state, action: PayloadAction<StoryInterface[]>) => {
       state.stories = action.payload
     },
     setIsLoading: (store, action) => {

@@ -3,12 +3,12 @@ import React from "react"
 import { Tags } from "components/Tags"
 import { topicsListOther, fixProjectTopic } from "utils/project-topics"
 import { shortName, longNameInTitleCase } from "utils/project-name"
-import { Repo } from "../Projects.types"
+import { RepoInterface } from "components/Projects"
 
 import * as Styled from "./OtherProject.styles"
 
 interface Props {
-  project: Repo
+  project: RepoInterface
 }
 
 const OtherProject = ({ project }: Props) => (

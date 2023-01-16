@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
-import { Repo } from "components/Projects/Projects.types"
+import { RepoInterface } from "components/Projects"
 
 interface ReposState {
-  allRepos: Repo[]
-  pinnedRepos: Repo[]
+  allRepos: RepoInterface[]
+  pinnedRepos: RepoInterface[]
   isLoading: boolean
   error: string
 }
@@ -20,10 +20,10 @@ const repos = createSlice({
   name: "repos",
   initialState,
   reducers: {
-    setAllRepos: (state, action: PayloadAction<Repo[]>) => {
+    setAllRepos: (state, action: PayloadAction<RepoInterface[]>) => {
       state.allRepos = action.payload
     },
-    setPinnedRepos: (state, action: PayloadAction<Repo[]>) => {
+    setPinnedRepos: (state, action: PayloadAction<RepoInterface[]>) => {
       state.pinnedRepos = action.payload
     },
     setIsLoading: (store, action) => {

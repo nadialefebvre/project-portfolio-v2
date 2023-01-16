@@ -1,3 +1,3 @@
 import ForMore from "./ForMore"
 
-export default ForMore
+export { ForMore }

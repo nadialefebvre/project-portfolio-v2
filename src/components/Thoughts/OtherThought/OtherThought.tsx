@@ -1,12 +1,12 @@
 import React from "react"
 
 import { formattedDate } from "utils/formattedDate"
-import { Story } from "../Thoughts.types"
+import { StoryInterface } from "components/Thoughts"
 
 import * as Styled from "./OtherThought.styles"
 
 interface Props {
-  thought: Story
+  thought: StoryInterface
 }
 
 const OtherThought = ({ thought }: Props) => (

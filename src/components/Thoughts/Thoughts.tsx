@@ -1,11 +1,10 @@
 import React, { useEffect } from "react"
 
-import { fetchStories } from "thunks/stories"
 import { Loader } from "components/Loader"
 import { Error } from "components/Error"
 import { Section } from "components/Section"
-import { FeaturedThought } from "./FeaturedThought"
-import { OtherThought } from "./OtherThought"
+import { FeaturedThought, OtherThought } from "components/Thoughts"
+import { fetchStories } from "thunks/stories"
 import { useAppDispatch } from "store/customHooks"
 import {
   useStoriesState,

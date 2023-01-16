@@ -18,7 +18,7 @@ import { client } from "graphql/client"
 import { store } from "store/configureStore"
 import { theme } from "styles/theme"
 
-import { GlobalStyle } from "App/App.styles"
+import { GlobalStyle } from "./App.styles"
 
 const App = () => (
   <ApolloProvider client={client}>
