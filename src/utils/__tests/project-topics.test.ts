@@ -6,24 +6,24 @@ import {
   projectType,
 } from "utils/project-topics"
 
-describe("fix project topic", () => {
-  it("fixProjectTopic should return `JavaScript` for this string in dictionary", () => {
+describe("fixProjectTopic function", () => {
+  test("should return `JavaScript` for this string in dictionary", () => {
     expect(fixProjectTopic("javascript")).toEqual("JavaScript")
   })
 
-  it("fixProjectTopic should return `Python` for this string not in dictionary", () => {
+  test("should return `Python` for this string not in dictionary", () => {
     expect(fixProjectTopic("python")).toEqual("Python")
   })
 
-  it("fixProjectTopic should return `C++` for this string not in dictionary", () => {
+  test("should return `C++` for this string not in dictionary", () => {
     expect(fixProjectTopic("c++")).toEqual("C++")
   })
 })
 
 const testArray = ["c#", "fullstack", "css", "frontend", "javascript"]
 
-describe("sort topics", () => {
-  it("sortTopics should return the expected array", () => {
+describe("sortTopics function", () => {
+  test("should return the expected array", () => {
     expect(sortTopics(testArray)).toEqual([
       "fullstack",
       "frontend",
@@ -120,8 +120,8 @@ const testFeaturedObject = {
   },
 }
 
-describe("topics list featured", () => {
-  it("topicsListFeatured should return the expected array", () => {
+describe("topicsListFeatured function", () => {
+  test("should return the expected array", () => {
     expect(topicsListFeatured(testFeaturedObject)).toEqual([
       "javascript",
       "react",
@@ -217,8 +217,8 @@ const testOtherObject = {
   createdAt: "2022-05-15T15:41:48Z",
 }
 
-describe("topics list other", () => {
-  it("topicsListOther should return the expected array", () => {
+describe("topicsListOther function", () => {
+  test("should return the expected array", () => {
     expect(topicsListOther(testOtherObject)).toEqual([
       "fullstack",
       "javascript",
@@ -235,8 +235,8 @@ describe("topics list other", () => {
   })
 })
 
-describe("project type", () => {
-  it("projectType should return the expected string", () => {
+describe("projectType function", () => {
+  test("should return the expected string", () => {
     expect(projectType(testOtherObject)).toEqual("Fullstack web app")
   })
 })
