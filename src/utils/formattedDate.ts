@@ -1,13 +1,5 @@
 export const formattedDate = (pubDate: string | null | undefined) => {
-  const invalidPudDate =
-    pubDate === "" ||
-    pubDate === "Invalid Date" ||
-    pubDate === null ||
-    pubDate === undefined
-
-  if (invalidPudDate) {
-    return ""
-  }
+  if (!pubDate) return ""
 
   const dateFormattedForAllBrowsers = pubDate.replace(/-/g, "/")
 
