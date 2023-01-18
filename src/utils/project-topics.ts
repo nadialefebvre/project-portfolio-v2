@@ -10,7 +10,6 @@ export const fixProjectTopic = (topic: string) => {
   }
 }
 
-// allows the items NOT in the dictionary to be added at the end
 export const sortTopics = (topics: string[]) => {
   const techTopicsOrder = Array.from(techTopicsDictionary.keys())
 
@@ -50,14 +49,24 @@ export const topicsListOther = (project: RepoInterface) => {
   return sortTopics(topicsToKeep)
 }
 
+const projectTypes = new Map([
+  ["fullstack", "Fullstack web app"],
+  ["mobile", "Mobile app"],
+  ["backend", "RESTful API"],
+  ["default", "Frontend web app"],
+])
+
 export const projectType = (project: RepoInterface) => {
-  if (setTopics(project).includes("fullstack")) {
-    return "Fullstack web app"
-  } else if (setTopics(project).includes("mobile")) {
-    return "Mobile app"
-  } else if (setTopics(project).includes("backend")) {
-    return "RESTful API"
+  const projectTopic = project.repositoryTopics.nodes.map(
+    ({ topic }) => topic.name
+  )
+  const foundType = Array.from(projectTypes.keys()).find((topic) =>
+    projectTopic.includes(topic)
+  )
+
+  if (foundType !== undefined) {
+    return projectTypes.get(foundType)
   } else {
-    return "Frontend web app"
+    return projectTypes.get("default")
   }
 }
