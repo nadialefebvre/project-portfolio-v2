@@ -7,9 +7,11 @@ import {
   FaMediumM,
 } from "react-icons/fa"
 
-export const setIcon = (name: string) => {
-  if (name === "Linkedin") return <FaLinkedinIn />
-  else if (name === "Stack Overflow") return <FaStackOverflow />
-  else if (name === "GitHub") return <FaGithub />
-  else if (name === "Medium") return <FaMediumM />
-}
+const iconMap = new Map([
+  ["Linkedin", <FaLinkedinIn />],
+  ["Stack Overflow", <FaStackOverflow />],
+  ["GitHub", <FaGithub />],
+  ["Medium", <FaMediumM />],
+])
+
+export const setIcon = (name: string) => iconMap.get(name)
