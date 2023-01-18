@@ -34,7 +34,7 @@ describe("sortTopics function", () => {
   })
 })
 
-const testFeaturedObject = {
+const testFeaturedProject = {
   id: "R_kgDOHg4ixA",
   name: "project-edible-nostalgia",
   description:
@@ -122,7 +122,7 @@ const testFeaturedObject = {
 
 describe("topicsListFeatured function", () => {
   test("should return the expected array", () => {
-    expect(topicsListFeatured(testFeaturedObject)).toEqual([
+    expect(topicsListFeatured(testFeaturedProject)).toEqual([
       "javascript",
       "react",
       "redux",
@@ -138,7 +138,7 @@ describe("topicsListFeatured function", () => {
   })
 })
 
-const testOtherObject = {
+const testOtherProject = {
   id: "R_kgDOHVto7w",
   name: "project-random-auth",
   description:
@@ -219,7 +219,7 @@ const testOtherObject = {
 
 describe("topicsListOther function", () => {
   test("should return the expected array", () => {
-    expect(topicsListOther(testOtherObject)).toEqual([
+    expect(topicsListOther(testOtherProject)).toEqual([
       "fullstack",
       "javascript",
       "react",
@@ -237,6 +237,6 @@ describe("topicsListOther function", () => {
 
 describe("projectType function", () => {
   test("should return the expected string", () => {
-    expect(projectType(testOtherObject)).toEqual("Fullstack web app")
+    expect(projectType(testOtherProject)).toEqual("Fullstack web app")
   })
 })
