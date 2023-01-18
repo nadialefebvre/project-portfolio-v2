@@ -3,8 +3,8 @@ import React from "react"
 import { render, screen } from "@testing-library/react"
 
 import OtherProject from "./OtherProject"
-import { RepoInterface } from "components/Projects"
 import data from "mapping-data/user.json"
+import { RepoInterface } from "components/Projects"
 
 const project: RepoInterface = {
   id: "123",
