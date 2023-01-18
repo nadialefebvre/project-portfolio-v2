@@ -1,7 +1,7 @@
 import React from "react"
 
 import { Tags } from "components/Tags"
-import { fixTopic } from "utils/fixTopic"
+import { removeDashFromTopic } from "utils/removeDashFromTopic"
 import { formattedDate } from "utils/formattedDate"
 import { StoryInterface } from "components/Thoughts"
 
@@ -40,7 +40,7 @@ const FeaturedThought = ({ thought }: Props) => {
             <Styled.Arrows aria-hidden="true">&gt;&gt;</Styled.Arrows>
           </Styled.Text>
         </div>
-        <Tags list={thought.categories} fixTopic={fixTopic} isItalic />
+        <Tags list={thought.categories} fixTopic={removeDashFromTopic} isItalic />
       </a>
     </Styled.Article>
   )
