@@ -19,7 +19,7 @@ const Section = ({
   subtitle,
   other,
 }: Props) => (
-  <Styled.Section>
+  <Styled.Section data-testid={title}>
     <Styled.InnerContainer>
       {title && (
         <Styled.HeadingContainer>
