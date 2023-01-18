@@ -40,7 +40,11 @@ const FeaturedThought = ({ thought }: Props) => {
             <Styled.Arrows aria-hidden="true">&gt;&gt;</Styled.Arrows>
           </Styled.Text>
         </div>
-        <Tags list={thought.categories} fixTopic={removeDashFromTopic} isItalic />
+        <Tags
+          list={thought.categories}
+          fixTopic={removeDashFromTopic}
+          isItalic
+        />
       </a>
     </Styled.Article>
   )
