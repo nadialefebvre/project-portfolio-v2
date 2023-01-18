@@ -1,5 +1,6 @@
 import { devTopics } from "reference-data/devTopics"
 import { techTopicsDictionary } from "reference-data/techTopicsDictionary"
+import { projectTypes } from "reference-data/projectTypes"
 import { RepoInterface } from "components/Projects"
 
 export const fixProjectTopic = (topic: string) => {
@@ -48,13 +49,6 @@ export const topicsListOther = (project: RepoInterface) => {
 
   return sortTopics(topicsToKeep)
 }
-
-const projectTypes = new Map([
-  ["fullstack", "Fullstack web app"],
-  ["mobile", "Mobile app"],
-  ["backend", "RESTful API"],
-  ["default", "Frontend web app"],
-])
 
 export const projectType = (project: RepoInterface) => {
   const projectTopic = project.repositoryTopics.nodes.map(
