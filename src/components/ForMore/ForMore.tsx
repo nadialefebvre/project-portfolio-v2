@@ -12,6 +12,7 @@ const ForMore = () => (
       {data.socials.map((item) => (
         <Styled.Link
           key={item.name}
+          data-testid={item.name}
           aria-label={`Go to profile on ${item.name}`}
           href={item.url}
           target="_blank"
