@@ -12,10 +12,6 @@ import {
   useErrorState,
 } from "selectors/stories"
 
-// maybe add a JSON file with data here as backup if api isn't working???
-
-// solution if no thumbnail?
-
 const Thoughts = () => {
   const dispatch = useAppDispatch()
 
