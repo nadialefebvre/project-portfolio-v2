@@ -24,7 +24,7 @@ export const Subheading = styled.h3`
   }
 `
 
-export const List = styled.h3`
+export const List = styled.ul`
   list-style-type: none;
   font-size: 17px;
   font-weight: 400;
