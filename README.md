@@ -2,26 +2,69 @@
 
 Personal project to showcase all my projects and thoughts about code. This is a makeover of a previous project, [Portfolio v1](https://github.com/nadialefebvre/project-portfolio-v1), which was made purely with HTML and CSS.
 
-I decided to make a second version so the project itself shows my frontend development skills.
+I decided to make a second version so the project itself shows my frontend development skills and my ability to learn what's necessary for a project.
 
-- I built it with **React** using **TypeScript**.
+## Tech stack
 
-- Even if it is a simple webpage, I decided to use Redux to store data received from APIs.
+- **React**
 
-- I had to fetch data from two sources: Medium and GitHub. *Medium* doesn't provide an API but I used a RSStoJSON converter to get an **API** endpoint I can use as for the `fetch`. *GitHub* has a REST API but it's a bit limited: there's not way to fetch specifically the pinned repositories. I decided to use GitHub's **GraphQL API** because it made it possible, but also because it's possible with GraphQL to query only the data needed, and it was a good opportunity to use new tech I never used before. I used **Apollo Client**'s library to manage my request with GraphQL. Using APIs instead of static data in some local file made it necessary to handle possible waiting time (`Loader` component) and error (`Error` component).
+  - I built it with **React** 18.
 
-- I used **Styled components** for the styling part. I made the choice to make it look the closest possible to the original (Portolio v1) based on a **Figma** design.
+- **TypeScript**
 
--
+  - I used **TypeScript** to practice more, having learned JavaScript before.
 
-## Available Scripts
+- **Redux**
+
+  - Even if it is a simple webpage, I decided to use **Redux** to store data received from APIs.
+
+- **API**
+
+  - I had to fetch data from two sources: Medium and GitHub. Medium doesn't provide an API but I used a RSStoJSON converter to get an **API** endpoint I could use as for the `fetch`.
+
+- **GraphQL API**
+
+  - GitHub has a REST API but it's a bit limited: there's not way to fetch specifically the pinned repositories. I decided to use GitHub's **GraphQL API** because it made it possible, but also because it's possible with GraphQL to query only the data needed, and it was a good opportunity to use new tech I never used before.
+
+- **Apollo Client**
+
+  - I used **Apollo Client**'s library to manage my request with GraphQL.
+
+- **Styled components**
+
+  - I chose to use **Styled components** for the styling part.
+
+- **Figma**
+
+  - I wanted to make it look the closest possible to the original (Portolio v1) based on a **Figma** design.
+
+- **Jest**
+
+  - I added unit tests with **Jest** for most of my code.
+
+- **GitHub Actions**
+  - I built a basic workflow in **GitHub Actions** to check if all tests pass when I push my code.
+
+## Comments
+
+Relying on APIs instead of storing static data in some local file made it necessary to handle possible waiting time and error, so I added `Loader` and `Error` components.
+
+I made sure that all other data, for example the list of skills or all user-related data (email, name, etc.) was not directly in the code but in `.json` files for mapping or in `.ts` files for reference.
+
+I broke down my code in simple and small but meaningful units so the code should be easier to read while staying easy to browse in.
+
+I practiced refactoring my code to make it better. Having unit tests helped with that because it would catch it issues in refactored code.
+
+I tried to read about the best practices and apply them along the way, even if opinions are very diverse about what's best to do.
+
+### Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+#### `npm start`
 
 Runs the app in the development mode.
 
-### `npm test`
+#### `npm test`
 
 Launches the test runner in the interactive watch mode.\
