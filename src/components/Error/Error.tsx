@@ -7,7 +7,7 @@ interface Props {
   error: string
 }
 
-const Error = ({ item, error }: Props) => (
+const Error: React.FC<Props> = ({ item, error }) => (
   <div>
     <Styled.IconBox>
       <Styled.Icon />

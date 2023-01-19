@@ -5,7 +5,7 @@ import data from "mapping-data/tech.json"
 
 import * as Styled from "./Tech.styles"
 
-const Tech = () => (
+const Tech: React.FC = () => (
   <Section title="Tech">
     <Styled.Text>
       {data.tech.map((item) =>

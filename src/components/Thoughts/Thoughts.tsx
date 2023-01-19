@@ -12,7 +12,7 @@ import {
   useErrorState,
 } from "selectors/stories"
 
-const Thoughts = () => {
+const Thoughts: React.FC = () => {
   const dispatch = useAppDispatch()
 
   const stories = useStoriesState()

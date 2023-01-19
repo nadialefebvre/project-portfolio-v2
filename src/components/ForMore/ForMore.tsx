@@ -6,7 +6,7 @@ import { setIcon } from "utils/setIcon"
 
 import * as Styled from "./ForMore.styles"
 
-const ForMore = () => (
+const ForMore: React.FC = () => (
   <Section title="For more">
     <Styled.Socials>
       {data.socials.map((item) => (

@@ -4,7 +4,7 @@ import data from "mapping-data/user.json"
 
 import * as Styled from "./Footer.styles"
 
-const Footer = () => (
+const Footer: React.FC = () => (
   <Styled.Footer>
     <Styled.Heading>Contact</Styled.Heading>
     <Styled.TextContainer>

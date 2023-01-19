@@ -8,7 +8,7 @@ interface Props {
   isItalic?: boolean
 }
 
-const Tags = ({ list, fixTopic, isItalic }: Props) => (
+const Tags: React.FC<Props> = ({ list, fixTopic, isItalic }) => (
   <Styled.TagsContainer>
     {list.map((item) => (
       <Styled.Tag key={item} isItalic={isItalic !== undefined && isItalic}>

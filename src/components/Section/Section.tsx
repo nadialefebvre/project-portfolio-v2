@@ -11,14 +11,14 @@ interface Props {
   other?: any
 }
 
-const Section = ({
+const Section: React.FC<Props> = ({
   title,
   extraTitle,
   children,
   featured,
   subtitle,
   other,
-}: Props) => (
+}) => (
   <Styled.Section data-testid={title}>
     <Styled.InnerContainer>
       {title && (

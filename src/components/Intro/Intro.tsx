@@ -5,7 +5,7 @@ import data from "mapping-data/user.json"
 
 import * as Styled from "./Intro.styles"
 
-const Intro = () => (
+const Intro: React.FC = () => (
   <Section>
     <Styled.Text>
       <Styled.Line />

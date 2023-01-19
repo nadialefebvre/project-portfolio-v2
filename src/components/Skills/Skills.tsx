@@ -5,7 +5,7 @@ import data from "mapping-data/skills.json"
 
 import * as Styled from "./Skills.styles"
 
-const Skills = () => (
+const Skills: React.FC = () => (
   <Section title="Skills">
     <Styled.Container>
       {data.categories.map((item) =>

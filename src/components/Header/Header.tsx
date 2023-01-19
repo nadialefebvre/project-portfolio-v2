@@ -5,7 +5,7 @@ import { setIcon } from "utils/setIcon"
 
 import * as Styled from "./Header.styles"
 
-const Header = () => (
+const Header: React.FC = () => (
   <Styled.Header>
     <Styled.InnerContainer>
       <Styled.Socials>

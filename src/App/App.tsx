@@ -20,7 +20,7 @@ import { theme } from "styles/theme"
 
 import { GlobalStyle } from "./App.styles"
 
-const App = () => (
+const App: React.FC = () => (
   <ApolloProvider client={client}>
     <ReduxProvider store={store}>
       <ThemeProvider theme={theme}>
