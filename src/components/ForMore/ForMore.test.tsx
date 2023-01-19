@@ -5,9 +5,9 @@ import { cleanup, render, screen } from "@testing-library/react"
 import ForMore from "./ForMore"
 import data from "mapping-data/user.json"
 
-afterEach(cleanup)
-
 describe("ForMore component", () => {
+  afterEach(cleanup)
+
   test("should render links to socials", () => {
     render(<ForMore />)
     data.socials.forEach((item) => {

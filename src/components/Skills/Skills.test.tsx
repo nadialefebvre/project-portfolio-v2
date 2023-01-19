@@ -4,8 +4,6 @@ import { cleanup, render, screen } from "@testing-library/react"
 
 import Skills from "./Skills"
 
-afterEach(cleanup)
-
 jest.mock("mapping-data/skills.json", () => ({
   categories: [
     {
@@ -24,6 +22,8 @@ jest.mock("mapping-data/skills.json", () => ({
 }))
 
 describe("Skills component", () => {
+  afterEach(cleanup)
+
   test("should render the correct data including only the categories with skills", () => {
     render(<Skills />)
     const category1 = screen.getByText("Category1")

@@ -5,9 +5,9 @@ import { cleanup, render, screen } from "@testing-library/react"
 import Tech from "./Tech"
 import data from "mapping-data/tech.json"
 
-afterEach(cleanup)
-
 describe("Tech component", () => {
+  afterEach(cleanup)
+
   test("should render tech items", () => {
     render(<Tech />)
     data.tech.forEach((item) => {

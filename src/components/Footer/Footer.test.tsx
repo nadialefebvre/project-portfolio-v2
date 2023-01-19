@@ -5,9 +5,9 @@ import { cleanup, render, screen } from "@testing-library/react"
 import data from "mapping-data/user.json"
 import Footer from "./Footer"
 
-afterEach(cleanup)
-
 describe("Footer component", () => {
+  afterEach(cleanup)
+
   test("should render contact information", () => {
     render(<Footer />)
     const name = screen.getByText(data.infos.name)

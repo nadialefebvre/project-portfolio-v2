@@ -4,9 +4,9 @@ import { cleanup, render, screen } from "@testing-library/react"
 
 import Tags from "./Tags"
 
-afterEach(cleanup)
-
 describe("Tags", () => {
+  afterEach(cleanup)
+
   const list = ["react", "javascript", "frontend"]
   const fixTopic = (item: string) => item.toUpperCase()
   const isItalic = true

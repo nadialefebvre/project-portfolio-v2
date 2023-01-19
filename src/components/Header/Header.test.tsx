@@ -5,9 +5,9 @@ import { cleanup, render, screen } from "@testing-library/react"
 import Header from "./Header"
 import data from "mapping-data/user.json"
 
-afterEach(cleanup)
-
 describe("Header component", () => {
+  afterEach(cleanup)
+
   test("should render the correct data", () => {
     render(<Header />)
     const name = screen.getByText(data.infos.name)

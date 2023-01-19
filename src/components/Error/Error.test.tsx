@@ -4,9 +4,9 @@ import { cleanup, render, screen } from "@testing-library/react"
 
 import Error from "./Error"
 
-afterEach(cleanup)
-
 describe("Error component", () => {
+  afterEach(cleanup)
+
   test("should render the correct text for item and error", () => {
     const item = "projects"
     const error = "404 Not Found"

@@ -4,9 +4,9 @@ import { cleanup, render, screen } from "@testing-library/react"
 
 import App from "./App"
 
-afterEach(cleanup)
-
 describe("App component", () => {
+  afterEach(cleanup)
+
   test("renders Header component in App", () => {
     render(<App />)
     const textInHeader = screen.getByText(/^portfolio/i)

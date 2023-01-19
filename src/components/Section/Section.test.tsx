@@ -4,9 +4,9 @@ import { cleanup, render, screen } from "@testing-library/react"
 
 import Section from "./Section"
 
-afterEach(cleanup)
-
 describe("Section", () => {
+  afterEach(cleanup)
+
   const title = "Section Title"
   const extraTitle = " Extra Title"
   const children = <p>Some children</p>
