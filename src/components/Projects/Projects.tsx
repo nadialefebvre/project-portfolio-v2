@@ -13,7 +13,7 @@ import {
   useErrorState,
 } from "selectors/repos"
 
-const Projects = () => {
+const Projects: React.FC = () => {
   const dispatch = useAppDispatch()
 
   const allRepos = useAllReposState()
