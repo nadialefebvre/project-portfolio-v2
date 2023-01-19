@@ -25,6 +25,6 @@ export const RegularString = styled.span`
 `
 
 export const ColoredString = styled(RegularString)`
-  color: ${({theme}) => theme.primary};
+  color: ${({ theme }) => theme.primary};
   font-weight: 500;
 `

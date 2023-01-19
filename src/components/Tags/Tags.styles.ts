@@ -13,7 +13,7 @@ export const Tag = styled.span<{ isItalic: boolean }>`
   line-height: 122%;
   text-align: center;
   letter-spacing: 0.01em;
-  background-color: ${({theme}) => theme.lightPrimary};
+  background-color: ${({ theme }) => theme.lightPrimary};
   padding: 5px;
   margin-right: 6px;
   margin-bottom: 6px;

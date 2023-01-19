@@ -8,8 +8,8 @@ export const Footer = styled.footer`
   align-items: center;
   justify-content: center;
   height: 302px;
-  background-color: ${({theme}) => theme.secondary};
-  color: ${({theme}) => theme.white};
+  background-color: ${({ theme }) => theme.secondary};
+  color: ${({ theme }) => theme.white};
   ${media.tabletUp} {
     height: 436px;
   }
@@ -21,7 +21,7 @@ export const Footer = styled.footer`
 export const Heading = styled.h2`
   font-size: 21px;
   line-height: 119%;
-  color: ${({theme}) => theme.white};
+  color: ${({ theme }) => theme.white};
   text-transform: uppercase;
   ${media.tabletUp} {
     font-size: 30px;
