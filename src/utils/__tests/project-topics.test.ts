@@ -5,6 +5,8 @@ import {
   topicsListOther,
   projectType,
 } from "utils/project-topics"
+import { mockedProject } from "mocks/mockedProject"
+import { mockedTopics } from "mocks/mockedTopics"
 
 describe("fixProjectTopic function", () => {
   test("should return `JavaScript` for this string in dictionary", () => {
@@ -20,11 +22,9 @@ describe("fixProjectTopic function", () => {
   })
 })
 
-const testArray = ["c#", "fullstack", "css", "frontend", "javascript"]
-
 describe("sortTopics function", () => {
   test("should return the expected array", () => {
-    expect(sortTopics(testArray)).toEqual([
+    expect(sortTopics(mockedTopics)).toEqual([
       "fullstack",
       "frontend",
       "javascript",
@@ -34,99 +34,12 @@ describe("sortTopics function", () => {
   })
 })
 
-const testFeaturedProject = {
-  id: "R_kgDOHg4ixA",
-  name: "project-edible-nostalgia",
-  description:
-    "App built with MongoDB, Express, Node.js, React, Redux, React Router and Material UI.",
-  url: "https://github.com/nadialefebvre/project-edible-nostalgia",
-  homepageUrl: "https://edible-nostalgia.netlify.app/",
-  repositoryTopics: {
-    nodes: [
-      {
-        topic: {
-          name: "css",
-        },
-      },
-      {
-        topic: {
-          name: "express",
-        },
-      },
-      {
-        topic: {
-          name: "html",
-        },
-      },
-      {
-        topic: {
-          name: "javascript",
-        },
-      },
-      {
-        topic: {
-          name: "mongodb",
-        },
-      },
-      {
-        topic: {
-          name: "nodejs",
-        },
-      },
-      {
-        topic: {
-          name: "react",
-        },
-      },
-      {
-        topic: {
-          name: "react-router",
-        },
-      },
-      {
-        topic: {
-          name: "redux",
-        },
-      },
-      {
-        topic: {
-          name: "materialui",
-        },
-      },
-      {
-        topic: {
-          name: "backend",
-        },
-      },
-      {
-        topic: {
-          name: "frontend",
-        },
-      },
-      {
-        topic: {
-          name: "fullstack",
-        },
-      },
-      {
-        topic: {
-          name: "api",
-        },
-      },
-    ],
-  },
-  defaultBranchRef: {
-    name: "main",
-  },
-}
-
 describe("topicsListFeatured function", () => {
   test("should return the expected array", () => {
-    expect(topicsListFeatured(testFeaturedProject)).toEqual([
+    expect(topicsListFeatured(mockedProject)).toEqual([
       "javascript",
       "react",
       "redux",
-      "react-router",
       "nodejs",
       "express",
       "mongodb",
@@ -138,88 +51,9 @@ describe("topicsListFeatured function", () => {
   })
 })
 
-const testOtherProject = {
-  id: "R_kgDOHVto7w",
-  name: "project-random-auth",
-  description:
-    "API with login and authenticated endpoints and frontend with login form.",
-  url: "https://github.com/nadialefebvre/project-random-auth",
-  homepageUrl: "https://random-auth.netlify.app/",
-  repositoryTopics: {
-    nodes: [
-      {
-        topic: {
-          name: "css",
-        },
-      },
-      {
-        topic: {
-          name: "express",
-        },
-      },
-      {
-        topic: {
-          name: "html",
-        },
-      },
-      {
-        topic: {
-          name: "javascript",
-        },
-      },
-      {
-        topic: {
-          name: "mongodb",
-        },
-      },
-      {
-        topic: {
-          name: "nodejs",
-        },
-      },
-      {
-        topic: {
-          name: "react",
-        },
-      },
-      {
-        topic: {
-          name: "redux",
-        },
-      },
-      {
-        topic: {
-          name: "fullstack",
-        },
-      },
-      {
-        topic: {
-          name: "materialui",
-        },
-      },
-      {
-        topic: {
-          name: "api",
-        },
-      },
-      {
-        topic: {
-          name: "backend",
-        },
-      },
-      {
-        topic: {
-          name: "frontend",
-        },
-      },
-    ],
-  },
-  createdAt: "2022-05-15T15:41:48Z",
-}
-
 describe("topicsListOther function", () => {
   test("should return the expected array", () => {
-    expect(topicsListOther(testOtherProject)).toEqual([
+    expect(topicsListOther(mockedProject)).toEqual([
       "fullstack",
       "javascript",
       "react",
@@ -237,6 +71,6 @@ describe("topicsListOther function", () => {
 
 describe("projectType function", () => {
   test("should return the expected string", () => {
-    expect(projectType(testOtherProject)).toEqual("Fullstack web app")
+    expect(projectType(mockedProject)).toEqual("Fullstack web app")
   })
 })

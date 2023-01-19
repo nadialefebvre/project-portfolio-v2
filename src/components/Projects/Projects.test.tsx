@@ -1,12 +1,14 @@
 import React from "react"
 
-import { render, screen } from "@testing-library/react"
+import { cleanup, render, screen } from "@testing-library/react"
 
 import { Projects } from "components/Projects"
 import { Provider as ReduxProvider } from "react-redux"
 import { store } from "store/configureStore"
 
 describe("Projects component", () => {
+  afterEach(cleanup)
+
   test("should render the component", () => {
     const { container } = render(
       <ReduxProvider store={store}>
@@ -32,7 +34,6 @@ describe("Projects component", () => {
         <Projects />
       </ReduxProvider>
     )
-
     const featuredProjects = screen.getByText("Featured projects")
     expect(featuredProjects).toBeInTheDocument()
   })

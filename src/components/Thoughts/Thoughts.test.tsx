@@ -1,12 +1,14 @@
 import React from "react"
 
-import { render, screen } from "@testing-library/react"
+import { cleanup, render, screen } from "@testing-library/react"
 
 import { Thoughts } from "components/Thoughts"
 import { Provider as ReduxProvider } from "react-redux"
 import { store } from "store/configureStore"
 
 describe("Thoughts component", () => {
+  afterEach(cleanup)
+
   test("should render the component", () => {
     const { container } = render(
       <ReduxProvider store={store}>
@@ -32,7 +34,6 @@ describe("Thoughts component", () => {
         <Thoughts />
       </ReduxProvider>
     )
-
     const featuredThoughts = screen.getByText("My thoughts")
     expect(featuredThoughts).toBeInTheDocument()
   })
