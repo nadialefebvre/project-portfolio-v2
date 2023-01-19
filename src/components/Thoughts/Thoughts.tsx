@@ -23,12 +23,23 @@ const Thoughts: React.FC = () => {
     dispatch(fetchStories())
   }, [dispatch])
 
-  return isLoading || error !== "" ? (
-    <Section title="My thoughts" extraTitle=" about code">
-      {isLoading && <Loader />}
-      {!isLoading && error !== "" && <Error item="thoughts" error={error} />}
-    </Section>
-  ) : (
+  if (isLoading) {
+    return (
+      <Section title="My thoughts" extraTitle=" about code">
+        <Loader />
+      </Section>
+    )
+  }
+
+  if (error !== "") {
+    return (
+      <Section title="My thoughts" extraTitle=" about code">
+        <Error item="thoughts" error={error} />
+      </Section>
+    )
+  }
+
+  return (
     <Section
       title="My thoughts"
       extraTitle=" about code"
