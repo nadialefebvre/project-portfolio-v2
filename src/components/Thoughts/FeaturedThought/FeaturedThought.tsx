@@ -11,9 +11,11 @@ interface Props {
   thought: StoryInterface
 }
 
-const FeaturedThought = ({ thought }: Props) => {
-  const startIndex = thought.description.indexOf("<p>") + 3
-  const croppedDescription = `${thought.description.slice(
+const FeaturedThought: React.FC<Props> = ({ thought }) => {
+  const { description, link, title, thumbnail, pubDate, categories } = thought
+
+  const startIndex = description.indexOf("<p>") + 3
+  const croppedDescription = `${description.slice(
     startIndex,
     startIndex + 250
   )}...`
@@ -21,30 +23,24 @@ const FeaturedThought = ({ thought }: Props) => {
   return (
     <Styled.Article>
       <a
-        href={thought.link}
+        href={link}
         aria-label="Go to story on Medium"
         target="_blank"
         rel="noopener noreferrer"
-        title={`${thought.title} - story`}
+        title={`${title} - story`}
       >
         <Styled.ImageContainer>
-          <Styled.Image src={thought.thumbnail} alt={thought.title} />
+          <Styled.Image src={thumbnail} alt={title} />
         </Styled.ImageContainer>
         <div>
-          <Styled.DateString>
-            {formattedDate(thought.pubDate)}
-          </Styled.DateString>
-          <Styled.Title>{thought.title}</Styled.Title>
+          <Styled.DateString>{formattedDate(pubDate)}</Styled.DateString>
+          <Styled.Title>{title}</Styled.Title>
           <Styled.Text>
             {`${croppedDescription} `}
             <Styled.Arrows aria-hidden="true">&gt;&gt;</Styled.Arrows>
           </Styled.Text>
         </div>
-        <Tags
-          list={thought.categories}
-          fixTopic={removeDashFromTopic}
-          isItalic
-        />
+        <Tags list={categories} fixTopic={removeDashFromTopic} isItalic />
       </a>
     </Styled.Article>
   )

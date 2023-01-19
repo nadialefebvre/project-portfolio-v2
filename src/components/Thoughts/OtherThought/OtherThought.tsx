@@ -9,24 +9,26 @@ interface Props {
   thought: StoryInterface
 }
 
-const OtherThought = ({ thought }: Props) => (
-  <Styled.Article>
-    <a
-      href={thought.link}
-      aria-label="Go to story on Medium"
-      target="_blank"
-      rel="noopener noreferrer"
-      title={`${thought.title} - story`}
-    >
-      <Styled.Title>
-        <Styled.DateString>
-          {`${formattedDate(thought.pubDate)}.`}
-        </Styled.DateString>
-        {` ${thought.title} `}
-        <Styled.Arrows aria-hidden="true">&gt;&gt;</Styled.Arrows>
-      </Styled.Title>
-    </a>
-  </Styled.Article>
-)
+const OtherThought: React.FC<Props> = ({ thought }) => {
+  const { link, title, pubDate } = thought
+
+  return (
+    <Styled.Article>
+      <a
+        href={link}
+        aria-label="Go to story on Medium"
+        target="_blank"
+        rel="noopener noreferrer"
+        title={`${title} - story`}
+      >
+        <Styled.Title>
+          <Styled.DateString>{`${formattedDate(pubDate)}.`}</Styled.DateString>
+          {` ${title} `}
+          <Styled.Arrows aria-hidden="true">&gt;&gt;</Styled.Arrows>
+        </Styled.Title>
+      </a>
+    </Styled.Article>
+  )
+}
 
 export default OtherThought
