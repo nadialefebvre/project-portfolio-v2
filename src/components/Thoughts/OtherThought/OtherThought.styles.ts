@@ -1,6 +1,11 @@
-import styled from "styled-components/macro"
+import styled, { css } from "styled-components/macro"
 
 import { media } from "styles/media-queries"
+
+const underline = css`
+  text-decoration-line: underline;
+  text-underline-position: under;
+`
 
 export const Article = styled.article`
   margin-top: 24px;
@@ -9,8 +14,7 @@ export const Article = styled.article`
 
 export const Title = styled.h3`
   font-size: 17px;
-  text-decoration-line: underline;
-  text-underline-position: under;
+  ${underline}
   ${media.tabletUp} {
     font-size: 21px;
   }
@@ -23,9 +27,8 @@ export const DateString = styled.span`
   font-size: 17px;
   font-weight: 400;
   text-transform: uppercase;
-  color: ${({theme}) => theme.primary};
-  text-decoration-line: underline;
-  text-underline-position: under;
+  color: ${({ theme }) => theme.primary};
+  ${underline}
   ${media.tabletUp} {
     font-size: 21px;
   }
@@ -35,7 +38,6 @@ export const DateString = styled.span`
 `
 
 export const Arrows = styled.span`
-  color: ${({theme}) => theme.primary};
-  text-decoration-line: underline;
-  text-underline-position: under;
+  color: ${({ theme }) => theme.primary};
+  ${underline}
 `
