@@ -13,7 +13,7 @@ export const Header = styled.header`
   background-position-y: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: ${(props) => props.theme.white};
+  color: ${({theme}) => theme.white};
   ${media.tabletUp} {
     height: 594px;
     background-image: linear-gradient(
@@ -70,7 +70,7 @@ export const Link = styled.a`
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     :hover {
       transform: scale(1.12);
-      color: ${(props) => props.theme.secondary};
+      color: ${({theme}) => theme.secondary};
     }
   }
 `
@@ -80,7 +80,7 @@ export const Circle = styled.div`
   height: 40px;
   margin-left: 5px;
   border-radius: 50%;
-  border: 1px solid ${(props) => props.theme.white};
+  border: 1px solid ${({theme}) => theme.white};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,13 +88,13 @@ export const Circle = styled.div`
     width: 60px;
     height: 60px;
     margin-left: 7.5px;
-    border: 1.5px solid ${(props) => props.theme.white};
+    border: 1.5px solid ${({theme}) => theme.white};
   }
   ${media.desktopUp} {
     width: 80px;
     height: 80px;
     margin-left: 10px;
-    border: 2px solid ${(props) => props.theme.white};
+    border: 2px solid ${({theme}) => theme.white};
   }
 `
 
@@ -164,7 +164,7 @@ export const Image = styled.img`
   right: 0;
   width: 180px;
   border-radius: 50%;
-  border: 2px solid ${(props) => props.theme.white};
+  border: 2px solid ${({theme}) => theme.white};
   ${media.tabletUp} {
     width: 257px;
     bottom: -28px;

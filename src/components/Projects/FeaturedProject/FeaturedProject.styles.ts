@@ -35,7 +35,7 @@ export const ImageOverlay = styled.div`
   align-items: center;
   justify-content: center;
   background: rgba(100, 100, 100, 0.4);
-  color: ${(props) => props.theme.white};
+  color: ${({ theme }) => theme.white};
   font-family: "Montserrat", sans-serif;
   text-align: center;
   text-transform: uppercase;
@@ -45,14 +45,14 @@ export const ImageOverlay = styled.div`
     :hover {
       background-color: transparent;
       color: transparent;
-      outline: 3px solid ${(props) => props.theme.secondary};
+      outline: 3px solid ${({ theme }) => theme.secondary};
     }
   }
 `
 
 export const Title = styled.h3`
   text-transform: uppercase;
-  color: ${(props) => props.theme.primary};
+  color: ${({ theme }) => theme.primary};
   letter-spacing: 0.01em;
   font-size: 17px;
   line-height: 171%;

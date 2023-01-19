@@ -16,7 +16,7 @@ export const Text = styled.p`
 export const Line = styled.span`
   width: 40px;
   margin-bottom: 4px;
-  border: 1px solid ${(props) => props.theme.primary};
+  border: 1px solid ${({theme}) => theme.primary};
   display: inline-block;
   ${media.tabletUp} {
     border-width: 1.5px;
@@ -34,7 +34,7 @@ export const Dot = styled.span`
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: ${(props) => props.theme.primary};
+  background-color: ${({theme}) => theme.primary};
   display: inline-block;
   ${media.tabletUp} {
     height: 15px;

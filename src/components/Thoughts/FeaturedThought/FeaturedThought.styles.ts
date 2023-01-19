@@ -16,7 +16,7 @@ export const ImageContainer = styled.div`
     margin-top: 54px;
     transition: 0.3s ease;
     :hover {
-      outline: 3px solid ${(props) => props.theme.secondary};
+      outline: 3px solid ${({theme}) => theme.secondary};
     }
   }
 `
@@ -37,7 +37,7 @@ export const DateString = styled.p`
   font-size: 17px;
   line-height: 176%;
   margin-top: 32px;
-  color: ${(props) => props.theme.primary};
+  color: ${({theme}) => theme.primary};
   ${media.tabletUp} {
     font-size: 21px;
   }
@@ -74,5 +74,5 @@ export const Text = styled.p`
 `
 
 export const Arrows = styled.span`
-  color: ${(props) => props.theme.primary};
+  color: ${({theme}) => theme.primary};
 `

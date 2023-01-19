@@ -5,10 +5,10 @@ import { media } from "styles/media-queries"
 export const Section = styled.section`
   padding: 40px 0;
   :nth-child(2n) {
-    background-color: ${(props) => props.theme.lightGrey};
+    background-color: ${({theme}) => theme.lightGrey};
   }
   :nth-child(2n + 1) {
-    background-color: ${(props) => props.theme.white};
+    background-color: ${({theme}) => theme.white};
   }
   ${media.tabletUp} {
     padding: 80px 0;
@@ -45,8 +45,8 @@ export const Heading = styled.h2`
   text-align: center;
   text-transform: uppercase;
   padding: 0 4px;
-  color: ${(props) => props.theme.white};
-  background-color: ${(props) => props.theme.primary};
+  color: ${({theme}) => theme.white};
+  background-color: ${({theme}) => theme.primary};
   font-size: 22px;
   line-height: 122%;
   ${media.tabletUp} {
@@ -91,7 +91,7 @@ export const SubheadingContainer = styled.div`
 `
 
 export const Subheading = styled.h2`
-  color: ${(props) => props.theme.primary};
+  color: ${({theme}) => theme.primary};
   font-size: 21px;
   line-height: 119%;
   text-transform: uppercase;

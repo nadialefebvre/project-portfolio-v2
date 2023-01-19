@@ -9,7 +9,7 @@ export const IconBox = styled.div`
 `
 
 export const Icon = styled(MdErrorOutline)`
-  color: ${(props) => props.theme.secondary};
+  color: ${({theme}) => theme.secondary};
   width: 40px;
   height: 40px;
   ${media.tabletUp} {

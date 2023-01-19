@@ -12,7 +12,7 @@ export const Container = styled.div`
 `
 
 export const Subheading = styled.h3`
-  color: ${(props) => props.theme.primary};
+  color: ${({theme}) => theme.primary};
   font-size: 17px;
   text-transform: uppercase;
   line-height: 171%;
