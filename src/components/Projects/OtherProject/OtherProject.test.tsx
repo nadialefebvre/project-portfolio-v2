@@ -15,7 +15,7 @@ describe("OtherProject component", () => {
     const tags = screen.getAllByTestId("topic")
     expect(title).toBeInTheDocument()
     expect(description).toBeInTheDocument()
-    expect(tags.length).toBe(11)
+    expect(tags.length).toBe(12)
   })
 
   test("should render the project title and description with a link to the repository", () => {

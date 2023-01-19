@@ -19,7 +19,7 @@ describe("FeaturedProject component", () => {
     expect(image).toBeInTheDocument()
     expect(title).toBeInTheDocument()
     expect(description).toBeInTheDocument()
-    expect(tags.length).toBe(10)
+    expect(tags.length).toBe(11)
   })
 
   test("should render the correct project image source", () => {
