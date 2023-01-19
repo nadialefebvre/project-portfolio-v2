@@ -2,9 +2,9 @@ import React from "react"
 
 import { Tags } from "components/Tags"
 import {
-  topicsListFeatured,
-  fixProjectTopic,
-  projectType,
+  setFeaturedProjectTopicsList,
+  fixSingleProjectTopic,
+  setProjectTitle,
 } from "utils/project-topics"
 import { shortName, longNameInTitleCase } from "utils/project-name"
 import data from "mapping-data/user.json"
@@ -46,9 +46,9 @@ const FeaturedProject: React.FC<Props> = ({ project }) => {
         rel="noopener noreferrer"
         title={`${longNameInTitleCase(name)} - repository`}
       >
-        <Styled.Title>{`${projectType(project)}.`}</Styled.Title>
+        <Styled.Title>{`${setProjectTitle(project)}.`}</Styled.Title>
         <Styled.Description>{description}</Styled.Description>
-        <Tags list={topicsListFeatured(project)} fixTopic={fixProjectTopic} />
+        <Tags list={setFeaturedProjectTopicsList(project)} fixTopic={fixSingleProjectTopic} />
       </a>
     </Styled.Article>
   )

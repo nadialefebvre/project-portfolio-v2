@@ -1,42 +1,28 @@
 import {
-  fixProjectTopic,
-  sortTopics,
-  topicsListFeatured,
-  topicsListOther,
-  projectType,
+  fixSingleProjectTopic,
+  setFeaturedProjectTopicsList,
+  setOtherProjectTopicsList,
+  setProjectTitle,
 } from "utils/project-topics"
 import { mockedProject } from "mocks/mockedProject"
-import { mockedTopics } from "mocks/mockedTopics"
 
-describe("fixProjectTopic function", () => {
+describe("fixSingleProjectTopic function", () => {
   test("should return `JavaScript` for this string in dictionary", () => {
-    expect(fixProjectTopic("javascript")).toEqual("JavaScript")
+    expect(fixSingleProjectTopic("javascript")).toEqual("JavaScript")
   })
 
   test("should return `Python` for this string not in dictionary", () => {
-    expect(fixProjectTopic("python")).toEqual("Python")
+    expect(fixSingleProjectTopic("python")).toEqual("Python")
   })
 
   test("should return `C++` for this string not in dictionary", () => {
-    expect(fixProjectTopic("c++")).toEqual("C++")
+    expect(fixSingleProjectTopic("c++")).toEqual("C++")
   })
 })
 
-describe("sortTopics function", () => {
+describe("setFeaturedProjectTopicsList function", () => {
   test("should return the expected array", () => {
-    expect(sortTopics(mockedTopics)).toEqual([
-      "fullstack",
-      "frontend",
-      "javascript",
-      "css",
-      "c#",
-    ])
-  })
-})
-
-describe("topicsListFeatured function", () => {
-  test("should return the expected array", () => {
-    expect(topicsListFeatured(mockedProject)).toEqual([
+    expect(setFeaturedProjectTopicsList(mockedProject)).toEqual([
       "javascript",
       "react",
       "redux",
@@ -51,9 +37,9 @@ describe("topicsListFeatured function", () => {
   })
 })
 
-describe("topicsListOther function", () => {
+describe("setOtherProjectTopicsList function", () => {
   test("should return the expected array", () => {
-    expect(topicsListOther(mockedProject)).toEqual([
+    expect(setOtherProjectTopicsList(mockedProject)).toEqual([
       "fullstack",
       "javascript",
       "react",
@@ -69,8 +55,8 @@ describe("topicsListOther function", () => {
   })
 })
 
-describe("projectType function", () => {
+describe("setProjectTitle function", () => {
   test("should return the expected string", () => {
-    expect(projectType(mockedProject)).toEqual("Fullstack web app")
+    expect(setProjectTitle(mockedProject)).toEqual("Fullstack web app")
   })
 })

@@ -1,7 +1,7 @@
 import React from "react"
 
 import { Tags } from "components/Tags"
-import { topicsListOther, fixProjectTopic } from "utils/project-topics"
+import { setOtherProjectTopicsList, fixSingleProjectTopic } from "utils/project-topics"
 import { shortName, longNameInTitleCase } from "utils/project-name"
 import { RepoInterface } from "components/Projects"
 
@@ -29,7 +29,7 @@ const OtherProject: React.FC<Props> = ({ project }) => {
             <Styled.Arrows aria-hidden="true">&gt;&gt;</Styled.Arrows>
           </Styled.Description>
         </Styled.TextContainer>
-        <Tags list={topicsListOther(project)} fixTopic={fixProjectTopic} />
+        <Tags list={setOtherProjectTopicsList(project)} fixTopic={fixSingleProjectTopic} />
       </a>
     </Styled.Article>
   )
