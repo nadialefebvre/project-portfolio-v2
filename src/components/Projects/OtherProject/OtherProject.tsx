@@ -11,24 +11,28 @@ interface Props {
   project: RepoInterface
 }
 
-const OtherProject = ({ project }: Props) => (
-  <Styled.Article>
-    <a
-      href={project.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      title={`${longNameInTitleCase(project.name)} - repository`}
-    >
-      <Styled.TextContainer>
-        <Styled.Title>{`${shortName(project.name)}.`}</Styled.Title>
-        <Styled.Description>
-          {project.description}{" "}
-          <Styled.Arrows aria-hidden="true">&gt;&gt;</Styled.Arrows>
-        </Styled.Description>
-      </Styled.TextContainer>
-      <Tags list={topicsListOther(project)} fixTopic={fixProjectTopic} />
-    </a>
-  </Styled.Article>
-)
+const OtherProject: React.FC<Props> = ({ project }) => {
+  const { name, url, description } = project
+
+  return (
+    <Styled.Article>
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={`${longNameInTitleCase(name)} - repository`}
+      >
+        <Styled.TextContainer>
+          <Styled.Title>{`${shortName(name)}.`}</Styled.Title>
+          <Styled.Description>
+            {description}{" "}
+            <Styled.Arrows aria-hidden="true">&gt;&gt;</Styled.Arrows>
+          </Styled.Description>
+        </Styled.TextContainer>
+        <Tags list={topicsListOther(project)} fixTopic={fixProjectTopic} />
+      </a>
+    </Styled.Article>
+  )
+}
 
 export default OtherProject
