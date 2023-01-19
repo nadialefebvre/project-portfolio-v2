@@ -26,14 +26,14 @@ const Projects = () => {
   }, [dispatch])
 
   const setNotPinnedRepos = () => {
-    const pinnedReposIDs = pinnedRepos?.map((repo) => repo.id)
+    const pinnedReposIDs = pinnedRepos.map((repo) => repo.id)
 
-    const notPinnedRepos = allRepos?.filter(
-      (repo) => !pinnedReposIDs?.includes(repo.id)
+    const notPinnedRepos = allRepos.filter(
+      (repo) => !pinnedReposIDs.includes(repo.id)
     )
 
-    const notPinnedReposSorted = notPinnedRepos?.sort((a, b) => {
-      if (a.createdAt !== undefined && b.createdAt !== undefined) {
+    const notPinnedReposSorted = notPinnedRepos.sort((a, b) => {
+      if (a.createdAt && b.createdAt) {
         return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
       }
       return 0
@@ -42,12 +42,23 @@ const Projects = () => {
     return notPinnedReposSorted
   }
 
-  return isLoading || error !== "" ? (
-    <Section title="Featured projects">
-      {isLoading && <Loader />}
-      {!isLoading && error !== "" && <Error item="projects" error={error} />}
-    </Section>
-  ) : (
+  if (isLoading) {
+    return (
+      <Section title="Featured projects">
+        <Loader />
+      </Section>
+    )
+  }
+
+  if (error !== "") {
+    return (
+      <Section title="Featured projects">
+        <Error item="projects" error={error} />
+      </Section>
+    )
+  }
+
+  return (
     <Section
       title="Featured projects"
       featured={pinnedRepos.map((repo) => (
