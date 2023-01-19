@@ -7,7 +7,7 @@ import {
   FaMediumM,
 } from "react-icons/fa"
 
-export const socialIcons = new Map([
+export const socialIcons: Map<string, JSX.Element> = new Map([
   ["Linkedin", <FaLinkedinIn />],
   ["Stack Overflow", <FaStackOverflow />],
   ["GitHub", <FaGithub />],

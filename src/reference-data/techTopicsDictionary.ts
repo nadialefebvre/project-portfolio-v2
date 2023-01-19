@@ -1,4 +1,4 @@
-export const techTopicsDictionary = new Map([
+export const techTopicsDictionary: Map<string, string> = new Map([
   ["fullstack", "Fullstack"],
   ["frontend", "Frontend"],
   ["backend", "Backend"],
