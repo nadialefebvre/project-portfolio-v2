@@ -1,6 +1,11 @@
-import styled from "styled-components/macro"
+import styled, { css } from "styled-components/macro"
 
 import { media } from "styles/media-queries"
+
+const underline = css`
+  text-decoration-line: underline;
+  text-underline-position: under;
+`
 
 export const Article = styled.article`
   margin-top: 40px;
@@ -14,7 +19,7 @@ export const TextContainer = styled.div`
 
 export const Title = styled.h3`
   text-transform: uppercase;
-  color: ${(props) => props.theme.primary};
+  color: ${({ theme }) => theme.primary};
   letter-spacing: 0.01em;
   font-size: 17px;
   line-height: 132%;
@@ -23,12 +28,7 @@ export const Title = styled.h3`
   }
   ${media.desktopUp} {
     line-height: 164%;
-    text-decoration-line: underline;
-    text-underline-position: under;
-    :hover {
-      text-decoration-line: underline;
-      text-underline-position: under;
-    }
+    ${underline}
   }
 `
 
@@ -41,24 +41,18 @@ export const Description = styled.p`
   }
   ${media.desktopUp} {
     line-height: 164%;
-    text-decoration-line: underline;
-    text-underline-position: under;
+    ${underline}
     white-space: pre;
     :before {
       content: " ";
-    }
-    :hover {
-      text-decoration-line: underline;
-      text-underline-position: under;
     }
   }
 `
 
 export const Arrows = styled.span`
-  color: ${(props) => props.theme.primary};
+  color: ${({ theme }) => theme.primary};
   font-weight: 700;
   ${media.desktopUp} {
-    text-decoration-line: underline;
-    text-underline-position: under;
+    ${underline}
   }
 `
