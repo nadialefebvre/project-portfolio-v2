@@ -16,7 +16,7 @@ interface Props {
   project: RepoInterface
 }
 
-const FeaturedProject = ({ project }: Props) => {
+const FeaturedProject: React.FC<Props> = ({ project }) => {
   const { name, homepageUrl, defaultBranchRef, url, description } = project
 
   const username = data.infos.usernameGitHub
