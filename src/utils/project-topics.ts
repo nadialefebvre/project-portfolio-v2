@@ -1,9 +1,8 @@
-import { devTopics } from "reference-data/devTopics"
 import { techTopicsDictionary } from "reference-data/techTopicsDictionary"
 import { projectTypes } from "reference-data/projectTypes"
 import { RepoInterface } from "components/Projects"
 
-export const fixProjectTopic = (topic: string) => {
+export const fixSingleProjectTopic = (topic: string) => {
   if (techTopicsDictionary.has(topic)) {
     return techTopicsDictionary.get(topic)
   } else {
@@ -11,7 +10,22 @@ export const fixProjectTopic = (topic: string) => {
   }
 }
 
-export const sortTopics = (topics: string[]) => {
+const setProjectTopicsList = (project: RepoInterface) =>
+  project.repositoryTopics.nodes.map(({ topic }) => topic.name)
+
+const projectTypesList = Array.from(projectTypes.keys())
+
+const findProjectType = (project: RepoInterface) =>
+  projectTypesList.find((topic) =>
+    setProjectTopicsList(project).includes(topic)
+  )
+
+const setProjectTopicsToKeep = (project: RepoInterface) =>
+  setProjectTopicsList(project).filter(
+    (topic) => !projectTypesList.includes(topic)
+  )
+
+const sortProjectTopics = (topics: string[]) => {
   const techTopicsOrder = Array.from(techTopicsDictionary.keys())
 
   const sortedTopics = topics.sort((a, b) => {
@@ -28,39 +42,28 @@ export const sortTopics = (topics: string[]) => {
   return sortedTopics
 }
 
-const setTopics = (project: RepoInterface) =>
-  project.repositoryTopics.nodes.map((topic) => topic.topic.name)
+export const setFeaturedProjectTopicsList = (project: RepoInterface) =>
+  sortProjectTopics(setProjectTopicsToKeep(project))
 
-export const topicsListFeatured = (project: RepoInterface) => {
-  const topicsToKeep = setTopics(project).filter(
-    (topic) => !devTopics.includes(topic)
-  )
+export const setOtherProjectTopicsList = (project: RepoInterface) => {
+  const topicsToKeep = setProjectTopicsToKeep(project)
+  const foundType = findProjectType(project)
 
-  return sortTopics(topicsToKeep)
+  if (foundType !== undefined) {
+    topicsToKeep.push(foundType)
+  } else {
+    topicsToKeep.push("frontend")
+  }
+
+  return sortProjectTopics(topicsToKeep)
 }
 
-export const topicsListOther = (project: RepoInterface) => {
-  const topicsToKeep = setTopics(project).filter(
-    (topic) =>
-      topic ===
-        setTopics(project).find((element) => devTopics.includes(element)) ||
-      !devTopics.includes(topic)
-  )
-
-  return sortTopics(topicsToKeep)
-}
-
-export const projectType = (project: RepoInterface) => {
-  const projectTopic = project.repositoryTopics.nodes.map(
-    ({ topic }) => topic.name
-  )
-  const foundType = Array.from(projectTypes.keys()).find((topic) =>
-    projectTopic.includes(topic)
-  )
+export const setProjectTitle = (project: RepoInterface) => {
+  const foundType = findProjectType(project)
 
   if (foundType !== undefined) {
     return projectTypes.get(foundType)
   } else {
-    return projectTypes.get("default")
+    return "frontend"
   }
 }
