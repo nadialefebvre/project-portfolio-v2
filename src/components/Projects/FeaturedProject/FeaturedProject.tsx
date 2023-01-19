@@ -17,39 +17,37 @@ interface Props {
 }
 
 const FeaturedProject = ({ project }: Props) => {
+  const { name, homepageUrl, defaultBranchRef, url, description } = project
+
   const username = data.infos.usernameGitHub
-  const projectName = project.name
-  const defaultBranch = project.defaultBranchRef?.name
-  const projectImageSrc = `https://raw.githubusercontent.com/${username}/${projectName}/${defaultBranch}/screenshot.jpg`
+  const defaultBranch = defaultBranchRef?.name
+  const projectImageSrc = `https://raw.githubusercontent.com/${username}/${name}/${defaultBranch}/screenshot.jpg`
 
   return (
     <Styled.Article>
       <a
-        href={project.homepageUrl}
-        aria-label={`Go to deployed project - ${shortName(project.name)}`}
+        href={homepageUrl}
+        aria-label={`Go to deployed project - ${shortName(name)}`}
         target="_blank"
         rel="noopener noreferrer"
-        title={`${longNameInTitleCase(project.name)} - website`}
+        title={`${longNameInTitleCase(name)} - website`}
       >
         <Styled.ImageContainer>
-          <Styled.Image
-            src={projectImageSrc}
-            alt={longNameInTitleCase(project.name)}
-          />
+          <Styled.Image src={projectImageSrc} alt={longNameInTitleCase(name)} />
           <Styled.ImageOverlay>
-            <h3>{shortName(project.name)}</h3>
+            <h3>{shortName(name)}</h3>
           </Styled.ImageOverlay>
         </Styled.ImageContainer>
       </a>
       <a
-        href={project.url}
-        aria-label={`Go to project repository - ${shortName(project.name)}`}
+        href={url}
+        aria-label={`Go to project repository - ${shortName(name)}`}
         target="_blank"
         rel="noopener noreferrer"
-        title={`${longNameInTitleCase(project.name)} - repository`}
+        title={`${longNameInTitleCase(name)} - repository`}
       >
         <Styled.Title>{`${projectType(project)}.`}</Styled.Title>
-        <Styled.Description>{project.description}</Styled.Description>
+        <Styled.Description>{description}</Styled.Description>
         <Tags list={topicsListFeatured(project)} fixTopic={fixProjectTopic} />
       </a>
     </Styled.Article>
