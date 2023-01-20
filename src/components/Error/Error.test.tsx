@@ -15,7 +15,7 @@ describe("Error component", () => {
     const itemText = screen.getByText(
       "There's an issue with the API fetching the projects"
     )
-    const errorText = screen.getByText(`Error: ${error}`)
+    const errorText = screen.getByText(`ERROR: ${error}`)
     const refreshText = screen.getByText(
       "Please refresh the page, or try later."
     )
