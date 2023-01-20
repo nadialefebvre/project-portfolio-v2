@@ -33,9 +33,12 @@ const Thoughts: React.FC = () => {
 
   if (error !== "") {
     return (
-      <Section title="My thoughts" extraTitle=" about code">
-        <Error item="thoughts" error={error} />
-      </Section>
+      <Error
+        text="There's an issue with the API fetching the thoughts"
+        error={error}
+        title="My thoughts"
+        extraTitle=" about code"
+      />
     )
   }
 

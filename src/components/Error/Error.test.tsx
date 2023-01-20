@@ -8,11 +8,12 @@ describe("Error component", () => {
   afterEach(cleanup)
 
   test("should render the correct text for item and error", () => {
-    const item = "projects"
-    const error = "404 Not Found"
-    render(<Error item={item} error={error} />)
+    const title = "Featured projects"
+    const text = "There's an issue with the API fetching the projects"
+    const error = "An error occurred"
+    render(<Error title={title} text={text} error={error} />)
     const itemText = screen.getByText(
-      `There's an issue with the API fetching the ${item}:`
+      "There's an issue with the API fetching the projects"
     )
     const errorText = screen.getByText(`Error: ${error}`)
     const refreshText = screen.getByText(
@@ -24,9 +25,10 @@ describe("Error component", () => {
   })
 
   test("should not render error message when error is empty", () => {
-    const item = "projects"
+    const title = "Featured projects"
+    const text = "There's an issue with the API fetching the projects"
     const error = ""
-    render(<Error item={item} error={error} />)
+    render(<Error title={title} text={text} error={error} />)
     expect(screen.queryByText("An error occurred")).toBeNull()
   })
 })

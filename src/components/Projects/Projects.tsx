@@ -52,9 +52,11 @@ const Projects: React.FC = () => {
 
   if (error !== "") {
     return (
-      <Section title="Featured projects">
-        <Error item="projects" error={error} />
-      </Section>
+      <Error
+        text="There's an issue with the API fetching the projects"
+        error={error}
+        title="Featured projects"
+      />
     )
   }
 
