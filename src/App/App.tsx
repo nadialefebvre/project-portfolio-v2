@@ -13,6 +13,7 @@ import {
   Skills,
   ForMore,
   Footer,
+  ErrorBoundary,
 } from "components"
 import { client } from "graphql/client"
 import { store } from "store/configureStore"
@@ -28,8 +29,12 @@ const App: React.FC = () => (
         <Header />
         <Intro />
         <Tech />
-        <Projects />
-        <Thoughts />
+        <ErrorBoundary title="Featured projects">
+          <Projects />
+        </ErrorBoundary>
+        <ErrorBoundary title="My thoughts" extraTitle=" about code">
+          <Thoughts />
+        </ErrorBoundary>
         <Skills />
         <ForMore />
         <Footer />
