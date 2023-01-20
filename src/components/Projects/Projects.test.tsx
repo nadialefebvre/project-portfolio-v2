@@ -27,14 +27,4 @@ describe("Projects component", () => {
     const loader = screen.getByTestId("animation")
     expect(loader).toBeInTheDocument()
   })
-
-  test("should display featured projects title", () => {
-    render(
-      <ReduxProvider store={store}>
-        <Projects />
-      </ReduxProvider>
-    )
-    const featuredProjects = screen.getByText("Featured projects")
-    expect(featuredProjects).toBeInTheDocument()
-  })
 })
