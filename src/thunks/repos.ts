@@ -5,18 +5,15 @@ import { AppDispatch } from "store/types"
 
 export const fetchRepos = () => {
   return async (dispatch: AppDispatch) => {
-    const { data, loading, error } = await client.query({ query: githubQuery })
-
-    if (loading) {
-      dispatch(repos.actions.setIsLoading(true))
-    }
-
-    if (error) {
+    try {
+      const { data } = await client.query({ query: githubQuery })
+      dispatch(repos.actions.setAllRepos(data.search.nodes))
+      dispatch(repos.actions.setPinnedRepos(data.user.pinnedItems.nodes))
+    } catch (error) {
+      console.error("Error:", error)
       dispatch(repos.actions.setError(error))
+    } finally {
+      dispatch(repos.actions.setIsLoading(false))
     }
-
-    dispatch(repos.actions.setAllRepos(data.search.nodes))
-    dispatch(repos.actions.setPinnedRepos(data.user.pinnedItems.nodes))
-    dispatch(repos.actions.setIsLoading(false))
   }
 }
