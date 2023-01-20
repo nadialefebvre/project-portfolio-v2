@@ -24,11 +24,7 @@ const Thoughts: React.FC = () => {
   }, [dispatch])
 
   if (isLoading) {
-    return (
-      <Section title="My thoughts" extraTitle=" about code">
-        <Loader />
-      </Section>
-    )
+    return <Loader title="My thoughts" extraTitle=" about code" />
   }
 
   if (error !== "") {

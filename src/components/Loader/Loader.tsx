@@ -1,15 +1,23 @@
 import React from "react"
 
+import { Section } from "components"
 import animation from "animations/animated-dots.json"
 
 import * as Styled from "./Loader.styles"
 
-const Loader: React.FC = () => (
-  <Styled.Animation
-    data-testid="animation"
-    animationData={animation}
-    loop={true}
-  />
+interface Props {
+  title: string
+  extraTitle?: string
+}
+
+const Loader: React.FC<Props> = ({ title, extraTitle }) => (
+  <Section title={title} extraTitle={extraTitle}>
+    <Styled.Animation
+      data-testid="animation"
+      animationData={animation}
+      loop={true}
+    />
+  </Section>
 )
 
 export default Loader

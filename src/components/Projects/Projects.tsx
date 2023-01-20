@@ -43,11 +43,7 @@ const Projects: React.FC = () => {
   }
 
   if (isLoading) {
-    return (
-      <Section title="Featured projects">
-        <Loader />
-      </Section>
-    )
+    return <Loader title="Featured projects" />
   }
 
   if (error !== "") {
