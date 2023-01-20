@@ -1,5 +1,7 @@
-import { Section } from "components"
 import React from "react"
+
+import { Section } from "components"
+import data from "mapping-data/user.json"
 
 import * as Styled from "./Error.styles"
 
@@ -22,13 +24,15 @@ const Error: React.FC<Props> = ({ title, extraTitle, text, error }) => {
         <Styled.Icon />
       </Styled.IconBox>
       <Styled.Text>{text}</Styled.Text>
-      <Styled.Error>{`Error: ${error}`}</Styled.Error>
+      <Styled.Error>{`ERROR: ${error}`}</Styled.Error>
       <Styled.Text>Please refresh the page, or try later.</Styled.Text>
       <Styled.Text>
         If the error remains, please{" "}
-        <a href="mailto:nadialefebvre.dev@hotmail.com?subject=Issue with your portfolio">
+        <Styled.MailtoLink
+          href={`mailto:${data.infos.email}?subject=Issue with your portfolio`}
+        >
           contact the developer
-        </a>
+        </Styled.MailtoLink>
         .
       </Styled.Text>
     </Section>

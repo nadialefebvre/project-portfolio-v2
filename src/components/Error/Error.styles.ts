@@ -35,6 +35,7 @@ export const Text = styled.p`
 `
 
 export const Error = styled.p`
+  color: ${({ theme }) => theme.secondary};
   font-family: "Courier New", Courier, monospace;
   font-size: 17px;
   line-height: 171%;
@@ -45,4 +46,10 @@ export const Error = styled.p`
   ${media.desktopUp} {
     line-height: 167%;
   }
+`
+
+export const MailtoLink = styled.a`
+  color: ${({ theme }) => theme.primary};
+  text-decoration-line: underline;
+  text-underline-position: under;
 `
