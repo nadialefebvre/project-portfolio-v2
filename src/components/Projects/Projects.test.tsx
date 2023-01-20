@@ -1,9 +1,9 @@
 import React from "react"
 
+import { Provider as ReduxProvider } from "react-redux"
 import { cleanup, render, screen } from "@testing-library/react"
 
-import { Projects } from "components/Projects"
-import { Provider as ReduxProvider } from "react-redux"
+import Projects from "./Projects"
 import { store } from "store/configureStore"
 
 describe("Projects component", () => {

@@ -19,7 +19,7 @@ class ErrorBoundary extends React.Component<any, any> {
         <Error
           title={this.props.title}
           extraTitle={this.props.extraTitle}
-          text="There's an issue with this component"
+          text="There's an issue with this component."
           error={this.state.error}
         />
       )

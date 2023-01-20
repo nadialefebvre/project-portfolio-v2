@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Section } from "components/Section"
+import { Section } from "components"
 import data from "mapping-data/tech.json"
 
 import * as Styled from "./Tech.styles"

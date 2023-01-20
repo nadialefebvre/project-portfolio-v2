@@ -1,8 +1,6 @@
 import React, { useEffect } from "react"
 
-import { Loader } from "components/Loader"
-import { Error } from "components/Error"
-import { Section } from "components/Section"
+import { Loader, Error, Section } from "components"
 import { FeaturedProject, OtherProject } from "components/Projects"
 import { useAppDispatch } from "store/customHooks"
 import { fetchRepos } from "thunks/repos"
@@ -49,7 +47,7 @@ const Projects: React.FC = () => {
   if (error !== "") {
     return (
       <Error
-        text="There's an issue with the API fetching the projects"
+        text="There's an issue with the API fetching the projects."
         error={error}
         title="Featured projects"
       />

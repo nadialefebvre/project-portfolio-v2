@@ -1,9 +1,9 @@
 import React from "react"
 
+import { Provider as ReduxProvider } from "react-redux"
 import { cleanup, render, screen } from "@testing-library/react"
 
-import { Thoughts } from "components/Thoughts"
-import { Provider as ReduxProvider } from "react-redux"
+import Thoughts from "./Thoughts"
 import { store } from "store/configureStore"
 
 describe("Thoughts component", () => {
