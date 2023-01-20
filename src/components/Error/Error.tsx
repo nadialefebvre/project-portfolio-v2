@@ -1,4 +1,4 @@
-import { Section } from "components/Section"
+import { Section } from "components"
 import React from "react"
 
 import * as Styled from "./Error.styles"
@@ -12,9 +12,8 @@ interface Props {
 
 const Error: React.FC<Props> = ({ title, extraTitle, text, error }) => {
   console.error(
-    "%cERROR =>",
-    "color: red; font-weight: bold; text-decoration: underline;",
-    error
+    `%cERROR => ${error}`,
+    "color: red; font-weight: bold; text-decoration: underline; font-size: 12px;"
   )
 
   return (
