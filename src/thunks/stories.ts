@@ -9,7 +9,11 @@ export const fetchStories = () => {
       const json = await res.json()
       dispatch(stories.actions.setStories(json.items))
     } catch (error) {
-      console.error("Error:", error)
+      console.error(
+        "%cERROR =>",
+        "color: red; font-weight: bold; text-decoration: underline;",
+        error
+      )
       dispatch(stories.actions.setError(error))
     } finally {
       dispatch(stories.actions.setIsLoading(false))

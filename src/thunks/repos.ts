@@ -10,7 +10,11 @@ export const fetchRepos = () => {
       dispatch(repos.actions.setAllRepos(data.search.nodes))
       dispatch(repos.actions.setPinnedRepos(data.user.pinnedItems.nodes))
     } catch (error) {
-      console.error("Error:", error)
+      console.error(
+        "%cERROR =>",
+        "color: red; font-weight: bold; text-decoration: underline;",
+        error
+      )
       dispatch(repos.actions.setError(error))
     } finally {
       dispatch(repos.actions.setIsLoading(false))
