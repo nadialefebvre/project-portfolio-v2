@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Tags } from "components/Tags"
+import { Tags } from "components"
 import { fixSingleThoughtTopic } from "utils/fixSingleThoughtTopic"
 import { formattedDate } from "utils/formattedDate"
 import { StoryInterface } from "components/Thoughts"

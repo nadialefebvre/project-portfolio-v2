@@ -6,9 +6,11 @@ import { Thoughts } from "./Thoughts"
 import { Skills } from "./Skills"
 import { ForMore } from "./ForMore"
 import { Footer } from "./Footer"
-import { Error } from "components/Error"
-import { Loader } from "components/Loader"
 import { Section } from "components/Section"
+import { Tags } from "components/Tags"
+import { Loader } from "components/Loader"
+import { Error } from "components/Error"
+import { ErrorBoundary } from "components/ErrorBoundary"
 
 export {
   Header,
@@ -19,7 +21,9 @@ export {
   Skills,
   ForMore,
   Footer,
-  Error,
-  Loader,
   Section,
+  Tags,
+  Loader,
+  Error,
+  ErrorBoundary,
 }
