@@ -54,16 +54,3 @@ const Thoughts: React.FC = () => {
 }
 
 export default Thoughts
-
-/*
-If there's an issue with API, use this endpoint instead (https://v1.nocodeapi.com/nadialefebvre/medium/UWGgqYxfsNCHnlbd)
-From here: https://app.nocodeapi.com/dashboard/api/medium
-(and add key in .env file and use data from user.json for username)
-
-But image (thumbnail) will need to be retrived from content directly (check response):
-  const startSrc = thought.content.indexOf(`src=`) + 5
-  const endSrc = thought.content.indexOf(`">`)
-  console.log(thought.content.slice(startSrc, endSrc))
-
-Otherwise, need to find a way to convert https://medium.com/feed/@nadialefebvredev in JSON...
-*/
