@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3e7bc5d3-cc48-41fb-addb-201bc636f43f/deploy-status)](https://app.netlify.com/sites/nadialefebvredev/deploys) [![Tests](https://github.com/nadialefebvre/project-portfolio-v2/actions/workflows/tests.yml/badge.svg)](https://github.com/nadialefebvre/project-portfolio-v2/actions/workflows/tests.yml) [![Lint](https://github.com/nadialefebvre/project-portfolio-v2/actions/workflows/lint.yml/badge.svg)](https://github.com/nadialefebvre/project-portfolio-v2/actions/workflows/lint.yml)
+
 # Project Portfolio v2
 
 Personal project to showcase all my projects and thoughts about code. This is a makeover of a previous project, [Portfolio v1](https://github.com/nadialefebvre/project-portfolio-v1), which was made purely with HTML and CSS.
@@ -69,4 +71,4 @@ Runs the app in the development mode.
 
 #### `npm test`
 
-Launches the test runner in the interactive watch mode.\
+Launches the test runner in the interactive watch mode.
