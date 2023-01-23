@@ -11,7 +11,11 @@ interface Props {
 const Tags: React.FC<Props> = ({ list, fixTopic, isItalic }) => (
   <Styled.TagsContainer>
     {list.map((item) => (
-      <Styled.Tag key={item} isItalic={isItalic !== undefined && isItalic} data-testid="topic">
+      <Styled.Tag
+        key={item}
+        isItalic={isItalic !== undefined && isItalic}
+        data-testid="topic"
+      >
         {isItalic && "#"}
         {fixTopic(item)}
       </Styled.Tag>

@@ -48,7 +48,10 @@ const FeaturedProject: React.FC<Props> = ({ project }) => {
       >
         <Styled.Title>{`${setProjectTitle(project)}.`}</Styled.Title>
         <Styled.Description>{description}</Styled.Description>
-        <Tags list={setFeaturedProjectTopicsList(project)} fixTopic={fixSingleProjectTopic} />
+        <Tags
+          list={setFeaturedProjectTopicsList(project)}
+          fixTopic={fixSingleProjectTopic}
+        />
       </a>
     </Styled.Article>
   )

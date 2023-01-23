@@ -1,1 +1,2 @@
-export const fixSingleThoughtTopic = (topic: string) => topic.replaceAll("-", "")
+export const fixSingleThoughtTopic = (topic: string) =>
+  topic.replaceAll("-", "")
