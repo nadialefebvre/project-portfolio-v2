@@ -61,6 +61,8 @@ I tried to read about the best practices and apply them along the way, even if o
 
 For handling of potential errors, I used `try`/`catch` method for my requests but I also added an `ErrorBoundary` component to catch errors at runtime that could crash the whole page. An error message is instead displayed. I used it for the two components relying on external data (projects and thoughts).
 
+Project deployed here: [Nadia Lefebvre | Portfolio](https://nadialefebvredev.netlify.app/)
+
 ### Available Scripts
 
 In the project directory, you can run:
