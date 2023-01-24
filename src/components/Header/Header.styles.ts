@@ -4,31 +4,16 @@ import { media } from "styles/media-queries"
 
 export const Header = styled.header`
   height: 520px;
-  background-image: linear-gradient(
-      rgba(100, 100, 100, 0.4),
-      rgba(100, 100, 100, 0.4)
-    ),
-    url("./assets/typewriter-mobile.jpg");
-  background-position-x: 50%;
-  background-position-y: center;
+  background-image: url("./assets/typewriter-header.jpg");
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
   color: ${({ theme }) => theme.white};
   ${media.tabletUp} {
     height: 594px;
-    background-image: linear-gradient(
-        rgba(100, 100, 100, 0.4),
-        rgba(100, 100, 100, 0.4)
-      ),
-      url("./assets/typewriter-tablet.jpg");
   }
   ${media.desktopUp} {
     height: 668px;
-    background-image: linear-gradient(
-        rgba(100, 100, 100, 0.4),
-        rgba(100, 100, 100, 0.4)
-      ),
-      url("./assets/typewriter-desktop.jpg");
   }
 `
 
