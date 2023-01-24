@@ -63,7 +63,7 @@ For handling of potential errors, I used `try`/`catch` method for my requests bu
 
 ## View it live
 
-Project deployed here: [Nadia Lefebvre | Portfolio](https://nadialefebvredev.netlify.app/)
+Project deployed here: [Nadia Lefebvre | Portfolio](https://nadialefebvre.dev/)
 
 <div align="center">
   <img src="screenshot.jpg" />
@@ -80,4 +80,3 @@ Runs the app in the development mode.
 #### `npm test`
 
 Launches the test runner in the interactive watch mode.
-
