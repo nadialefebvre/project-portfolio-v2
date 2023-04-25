@@ -46,7 +46,7 @@
     },
     {
       "name": "Node.js",
-      "isHighlighted": false
+      "isHighlighted": true
     },
     {
       "name": "MongoDB",
