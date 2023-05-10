@@ -2,7 +2,7 @@
 
 # Project Portfolio v2
 
-Personal project to showcase all my projects and thoughts about code. This is a makeover of a previous project, [Portfolio v1](https://github.com/nadialefebvre/project-portfolio-v1), which was made purely with HTML and CSS.
+Personal project to showcase all my projects and thoughts about code. (January 2023) This is a makeover of a previous project, [Portfolio v1](https://github.com/nadialefebvre/project-portfolio-v1), which was made purely with HTML and CSS.
 
 I decided to make a second version so the project itself shows my frontend development skills and my ability to learn what's necessary for a project.
 
