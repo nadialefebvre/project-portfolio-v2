@@ -21,4 +21,8 @@ export const techTopicsDictionary: Map<string, string> = new Map([
   ["api", "API"],
   ["figma", "Figma"],
   ["cms", "CMS"],
+  ["monaco-editor", "Monaco Editor"],
+  ["cli", "CLI"],
+  ["npm", "npm"],
+  ["esbuild", "esbuild"],
 ])
