@@ -2,8 +2,8 @@ import React from "react"
 
 import { cleanup, render, screen } from "@testing-library/react"
 
-import Header from "./Header"
 import data from "mapping-data/user.json"
+import Header from "./Header"
 
 describe("Header component", () => {
   afterEach(cleanup)

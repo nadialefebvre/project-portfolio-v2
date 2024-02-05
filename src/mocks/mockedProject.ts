@@ -1,5 +1,5 @@
-import data from "mapping-data/user.json"
 import { RepoInterface } from "components/Projects"
+import data from "mapping-data/user.json"
 
 export const mockedProject: RepoInterface = {
   id: "123",

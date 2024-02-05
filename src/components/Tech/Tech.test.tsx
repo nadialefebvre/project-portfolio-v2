@@ -2,8 +2,8 @@ import React from "react"
 
 import { cleanup, render, screen } from "@testing-library/react"
 
-import Tech from "./Tech"
 import data from "mapping-data/tech.json"
+import Tech from "./Tech"
 
 describe("Tech component", () => {
   afterEach(cleanup)

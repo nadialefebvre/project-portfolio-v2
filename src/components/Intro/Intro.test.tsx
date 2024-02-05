@@ -2,8 +2,8 @@ import React from "react"
 
 import { cleanup, render, screen } from "@testing-library/react"
 
-import Intro from "./Intro"
 import data from "mapping-data/user.json"
+import Intro from "./Intro"
 
 describe("Intro component", () => {
   afterEach(cleanup)

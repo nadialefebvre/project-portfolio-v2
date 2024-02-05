@@ -1,6 +1,6 @@
-import Projects from "./Projects"
 import { FeaturedProject } from "./FeaturedProject"
 import { OtherProject } from "./OtherProject"
+import Projects from "./Projects"
 import { Repo as RepoInterface } from "./Projects.types"
 
-export { Projects, FeaturedProject, OtherProject, type RepoInterface }
+export { FeaturedProject, OtherProject, Projects, type RepoInterface }

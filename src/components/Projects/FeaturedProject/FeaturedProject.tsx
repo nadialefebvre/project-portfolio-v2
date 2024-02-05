@@ -1,14 +1,14 @@
 import React from "react"
 
 import { Tags } from "components"
+import { RepoInterface } from "components/Projects"
+import data from "mapping-data/user.json"
+import { longNameInTitleCase, shortName } from "utils/project-name"
 import {
-  setFeaturedProjectTopicsList,
   fixSingleProjectTopic,
+  setFeaturedProjectTopicsList,
   setProjectTitle,
 } from "utils/project-topics"
-import { shortName, longNameInTitleCase } from "utils/project-name"
-import data from "mapping-data/user.json"
-import { RepoInterface } from "components/Projects"
 
 import * as Styled from "./FeaturedProject.styles"
 

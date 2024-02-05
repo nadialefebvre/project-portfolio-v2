@@ -2,9 +2,9 @@ import React from "react"
 
 import { cleanup, render, screen } from "@testing-library/react"
 
-import FeaturedThought from "./FeaturedThought"
-import { formattedDate } from "utils/formattedDate"
 import { mockedThought } from "mocks/mockedThought"
+import { formattedDate } from "utils/formattedDate"
+import FeaturedThought from "./FeaturedThought"
 
 describe("FeaturedThought component", () => {
   afterEach(cleanup)

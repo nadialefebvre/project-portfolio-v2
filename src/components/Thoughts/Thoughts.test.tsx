@@ -1,10 +1,10 @@
 import React from "react"
 
-import { Provider as ReduxProvider } from "react-redux"
 import { cleanup, render, screen } from "@testing-library/react"
+import { Provider as ReduxProvider } from "react-redux"
 
-import Thoughts from "./Thoughts"
 import { store } from "store/configureStore"
+import Thoughts from "./Thoughts"
 
 describe("Thoughts component", () => {
   afterEach(cleanup)

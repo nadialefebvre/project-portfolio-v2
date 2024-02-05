@@ -1,12 +1,12 @@
 import React from "react"
 
 import { Tags } from "components"
-import {
-  setOtherProjectTopicsList,
-  fixSingleProjectTopic,
-} from "utils/project-topics"
-import { shortName, longNameInTitleCase } from "utils/project-name"
 import { RepoInterface } from "components/Projects"
+import { longNameInTitleCase, shortName } from "utils/project-name"
+import {
+  fixSingleProjectTopic,
+  setOtherProjectTopicsList,
+} from "utils/project-topics"
 
 import * as Styled from "./OtherProject.styles"
 

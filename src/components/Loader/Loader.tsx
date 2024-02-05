@@ -1,7 +1,7 @@
 import React from "react"
 
-import { Section } from "components"
 import animation from "animations/animated-dots.json"
+import { Section } from "components"
 
 import * as Styled from "./Loader.styles"
 

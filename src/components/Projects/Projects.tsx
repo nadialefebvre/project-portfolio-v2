@@ -1,15 +1,15 @@
 import React, { useEffect } from "react"
 
-import { Loader, Error, Section } from "components"
+import { Error, Loader, Section } from "components"
 import { FeaturedProject, OtherProject } from "components/Projects"
-import { useAppDispatch } from "store/customHooks"
-import { fetchRepos } from "thunks/repos"
 import {
   useAllReposState,
-  usePinnedReposState,
-  useIsLoadingState,
   useErrorState,
+  useIsLoadingState,
+  usePinnedReposState,
 } from "selectors/repos"
+import { useAppDispatch } from "store/customHooks"
+import { fetchRepos } from "thunks/repos"
 
 const Projects: React.FC = () => {
   const dispatch = useAppDispatch()

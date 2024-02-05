@@ -1,6 +1,6 @@
 import React from "react"
 
-import { cleanup, screen, render } from "@testing-library/react"
+import { cleanup, render, screen } from "@testing-library/react"
 
 import ErrorBoundary from "./ErrorBoundary"
 

@@ -1,16 +1,14 @@
 import React, { useEffect } from "react"
 
-import { Loader } from "components"
-import { Error } from "components"
-import { Section } from "components"
+import { Error, Loader, Section } from "components"
 import { FeaturedThought, OtherThought } from "components/Thoughts"
-import { fetchStories } from "thunks/stories"
-import { useAppDispatch } from "store/customHooks"
 import {
-  useStoriesState,
-  useIsLoadingState,
   useErrorState,
+  useIsLoadingState,
+  useStoriesState,
 } from "selectors/stories"
+import { useAppDispatch } from "store/customHooks"
+import { fetchStories } from "thunks/stories"
 
 const Thoughts: React.FC = () => {
   const dispatch = useAppDispatch()

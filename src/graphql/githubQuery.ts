@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client"
 
-import data from "mapping-data/user.json"
 import { fragment } from "graphql/fragment"
+import data from "mapping-data/user.json"
 
 export const githubQuery = gql`
   ${fragment}

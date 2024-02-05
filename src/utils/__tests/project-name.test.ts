@@ -1,4 +1,4 @@
-import { shortName, longNameInTitleCase } from "utils/project-name"
+import { longNameInTitleCase, shortName } from "utils/project-name"
 
 describe("shortName function", () => {
   test("should remove `project-` and replace all `-` with space in the name", () => {

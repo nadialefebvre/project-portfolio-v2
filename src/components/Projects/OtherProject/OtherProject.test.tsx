@@ -2,8 +2,8 @@ import React from "react"
 
 import { cleanup, render, screen } from "@testing-library/react"
 
-import OtherProject from "./OtherProject"
 import { mockedProject } from "mocks/mockedProject"
+import OtherProject from "./OtherProject"
 
 describe("OtherProject component", () => {
   afterEach(cleanup)

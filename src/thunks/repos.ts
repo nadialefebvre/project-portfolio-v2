@@ -1,6 +1,6 @@
-import repos from "reducers/repos"
 import { client } from "graphql/client"
 import { githubQuery } from "graphql/githubQuery"
+import repos from "reducers/repos"
 import { AppDispatch } from "store/types"
 
 export const fetchRepos = () => {

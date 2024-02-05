@@ -1,6 +1,6 @@
-import { techTopicsDictionary } from "reference-data/techTopicsDictionary"
-import { projectTypes } from "reference-data/projectTypes"
 import { RepoInterface } from "components/Projects"
+import { projectTypes } from "reference-data/projectTypes"
+import { techTopicsDictionary } from "reference-data/techTopicsDictionary"
 
 export const fixSingleProjectTopic = (topic: string) => {
   if (techTopicsDictionary.has(topic)) {

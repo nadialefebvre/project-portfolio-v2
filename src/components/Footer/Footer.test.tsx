@@ -2,8 +2,8 @@ import React from "react"
 
 import { cleanup, render, screen } from "@testing-library/react"
 
-import Footer from "./Footer"
 import data from "mapping-data/user.json"
+import Footer from "./Footer"
 
 describe("Footer component", () => {
   afterEach(cleanup)

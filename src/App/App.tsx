@@ -5,15 +5,15 @@ import { Provider as ReduxProvider } from "react-redux"
 import { ThemeProvider } from "styled-components"
 
 import {
+  ErrorBoundary,
+  Footer,
+  ForMore,
   Header,
   Intro,
-  Tech,
   Projects,
-  Thoughts,
   Skills,
-  ForMore,
-  Footer,
-  ErrorBoundary,
+  Tech,
+  Thoughts,
 } from "components"
 import { client } from "graphql/client"
 import { store } from "store/configureStore"

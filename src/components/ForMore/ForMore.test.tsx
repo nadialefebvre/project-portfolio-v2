@@ -2,8 +2,8 @@ import React from "react"
 
 import { cleanup, render, screen } from "@testing-library/react"
 
-import ForMore from "./ForMore"
 import data from "mapping-data/user.json"
+import ForMore from "./ForMore"
 
 describe("ForMore component", () => {
   afterEach(cleanup)

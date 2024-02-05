@@ -1,6 +1,6 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client"
 
-import { githubEndpoint, GITHUB_TOKEN } from "constants/github"
+import { GITHUB_TOKEN, githubEndpoint } from "constants/github"
 
 export const client = new ApolloClient({
   uri: githubEndpoint,

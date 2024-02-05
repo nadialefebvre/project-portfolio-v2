@@ -1,10 +1,10 @@
+import { mockedProject } from "mocks/mockedProject"
 import {
   fixSingleProjectTopic,
   setFeaturedProjectTopicsList,
   setOtherProjectTopicsList,
   setProjectTitle,
 } from "utils/project-topics"
-import { mockedProject } from "mocks/mockedProject"
 
 describe("fixSingleProjectTopic function", () => {
   test("should return `JavaScript` for this string in dictionary", () => {

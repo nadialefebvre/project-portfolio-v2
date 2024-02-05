@@ -2,10 +2,10 @@ import React from "react"
 
 import { cleanup, render, screen } from "@testing-library/react"
 
-import FeaturedProject from "./FeaturedProject"
+import data from "mapping-data/user.json"
 import { mockedProject } from "mocks/mockedProject"
 import { longNameInTitleCase } from "utils/project-name"
-import data from "mapping-data/user.json"
+import FeaturedProject from "./FeaturedProject"
 
 describe("FeaturedProject component", () => {
   afterEach(cleanup)
