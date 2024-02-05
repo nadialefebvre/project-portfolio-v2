@@ -1,9 +1,9 @@
 import React from "react"
 
 import { Tags } from "components"
+import { StoryInterface } from "components/Thoughts"
 import { fixSingleThoughtTopic } from "utils/fixSingleThoughtTopic"
 import { formattedDate } from "utils/formattedDate"
-import { StoryInterface } from "components/Thoughts"
 
 import * as Styled from "./FeaturedThought.styles"
 
@@ -20,6 +20,8 @@ const FeaturedThought: React.FC<Props> = ({ thought }) => {
     startIndex + 250
   )}...`
 
+  const hasThumbnail = thumbnail !== "" && thumbnail !== null
+
   return (
     <Styled.Article>
       <a
@@ -29,9 +31,11 @@ const FeaturedThought: React.FC<Props> = ({ thought }) => {
         rel="noopener noreferrer"
         title={`${title} - story`}
       >
-        <Styled.ImageContainer>
-          <Styled.Image src={thumbnail} alt={title} />
-        </Styled.ImageContainer>
+        {hasThumbnail && (
+          <Styled.ImageContainer>
+            <Styled.Image src={thumbnail} alt={title} />
+          </Styled.ImageContainer>
+        )}
         <div>
           <Styled.DateString>{formattedDate(pubDate)}</Styled.DateString>
           <Styled.Title>{title}</Styled.Title>
